@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>System_Init_Toolbox</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>appicon-ico.ico</ApplicationIcon>
+    <PackageIcon>appicon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="win-logo.png" />
+    <None Remove="win11-logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appicon-ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModernWpfUI" Version="0.9.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="appicon.png" />
+    <Resource Include="win11-logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appicon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
