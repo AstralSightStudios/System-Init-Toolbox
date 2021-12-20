@@ -17,7 +17,7 @@
                     <Label x:Name="Label_System_Build" Content="系统build号：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,202,0,0"/>
                     <Label x:Name="Label_System_Edition_ID" Content="系统版本ID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,232,0,0"/>
                     <Label x:Name="Label_System_Product_ID" Content="系统ProductID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,262,0,0"/>
-                    <Label x:Name="Label_System_DigitalProduct_Id" Content="DigitalProductId：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,292,0,0"/>
+                    <Label x:Name="Label_System_Root" Content="DigitalProductId：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,292,0,0"/>
                     <Image HorizontalAlignment="Left" Height="59" Margin="371,54,0,0" VerticalAlignment="Top" Width="62" Stretch="None" Source="/win11-logo.png"/>
                 </Grid>
             </TabItem>
