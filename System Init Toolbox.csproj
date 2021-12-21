@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="desktop_256_regular.png" />
+    <None Remove="desktop_32_regular.png" />
+    <None Remove="desktop_32_regular.svg" />
+    <None Remove="gpu_256_regular.png" />
     <None Remove="win-logo.png" />
     <None Remove="win11-logo.png" />
   </ItemGroup>
@@ -21,10 +25,13 @@
 
   <ItemGroup>
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
+    <PackageReference Include="System.Management" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="appicon.png" />
+    <Resource Include="desktop_256_regular.png" />
+    <Resource Include="gpu_256_regular.png" />
     <Resource Include="win11-logo.png" />
   </ItemGroup>
 
