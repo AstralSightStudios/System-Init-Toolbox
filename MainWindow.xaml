@@ -90,7 +90,7 @@
                     <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/appicon.png"/>
                     <Label Content="System Init Toolbox" Margin="242,110,242,0" VerticalAlignment="Top" FontSize="36" FontFamily="Roboto" Height="54"/>
                     <Label Content="程序编写/UI设计：" Margin="188,192,458,0" VerticalAlignment="Top" FontSize="18" FontFamily="SourceHanSansSC" Height="27"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="491,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Width="104" Height="29">
+                    <TextBlock HorizontalAlignment="Left" Margin="360,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Width="104" Height="29">
                         <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234" Height="33" VerticalAlignment="Top" FontFamily="SourceHanSansSC">
                             @Searchstars
                          </ui:HyperlinkButton>
@@ -104,6 +104,7 @@
                     <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="xiaoniu1234/System-init-Toolbox" Margin="324,253,0,0"/>
                     <Label Content="欢迎提出issues/pull requests哦！" Margin="564,262,37,0" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI Light" Height="27"/>
+                    <ui:HyperlinkButton NavigateUri="https://github.com/scp-10492" Height="33" VerticalAlignment="Top" Content="@SCP-10492" Margin="464,187,0,0" Cursor="Hand" FontSize="12"/>
                 </Grid>
             </TabItem>
             <TabItem Header="开发选项" FontFamily="Source Han Sans SC">
