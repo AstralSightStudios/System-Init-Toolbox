@@ -8,6 +8,13 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>appicon-ico.ico</ApplicationIcon>
     <PackageIcon>appicon.png</PackageIcon>
+    <StartupObject>System_Init_Toolbox.App</StartupObject>
+    <NeutralLanguage>zh-CN</NeutralLanguage>
+    <AnalysisLevel>none</AnalysisLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +23,7 @@
     <None Remove="desktop_256_regular.png" />
     <None Remove="desktop_32_regular.png" />
     <None Remove="desktop_32_regular.svg" />
+    <None Remove="dev_256_regular.png" />
     <None Remove="gpu_256_regular.png" />
     <None Remove="win-logo.png" />
     <None Remove="win11-logo.png" />
@@ -38,6 +46,7 @@
     </Resource>
     <Resource Include="baseboard_256_regular.png" />
     <Resource Include="desktop_256_regular.png" />
+    <Resource Include="dev_256_regular.png" />
     <Resource Include="gpu_256_regular.png" />
     <Resource Include="win11-logo.png" />
   </ItemGroup>

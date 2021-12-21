@@ -3,6 +3,7 @@ using System.Windows;
 using Microsoft.Win32;
 using System.Management;
 using ModernWpf.Controls;
+using System.Net;
 
 namespace System_Init_Toolbox
 {
@@ -68,7 +69,7 @@ namespace System_Init_Toolbox
             //获取系统信息并显示
             OperatingSystem os = Environment.OSVersion;
             Version ver = os.Version;
-            //获取电脑名称
+            //获取电脑名称，没啥用，废案
             string get_conputer_name = System.Environment.GetEnvironmentVariable("ComputerName");
             if(get_conputer_name != null)
             {
@@ -148,5 +149,29 @@ namespace System_Init_Toolbox
 
             ContentDialogResult result = await gpu_installed_display_drivers_dialog.ShowAsync();
         }
+
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //这个下载方式是个废案，按钮留下来占个位置，这个函数不用看了，没意义
+            double version = 497.29;
+            ContentDialog debug_nvidia_gpu_driver_download_link_dialog = new ContentDialog
+            {
+                Title = "Debug Message",
+                Content = "https://cn.download.nvidia.com/Windows/" + version + "/" + version + "-notebook-win10-win11-64bit-international-dch-whql.exe",
+                CloseButtonText = "OK"
+            };
+            ContentDialogResult result = await debug_nvidia_gpu_driver_download_link_dialog.ShowAsync();
+        }
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ContentDialog debug_output_gitee_link_content = new ContentDialog
+            {
+                Title = "Debug Message",
+                Content = await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-desktop-lastet.txt"),
+                CloseButtonText = "OK"
+            };
+            ContentDialogResult result = await debug_output_gitee_link_content.ShowAsync();
+        }
     }
-}
+    }
