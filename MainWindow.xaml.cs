@@ -122,7 +122,8 @@ namespace System_Init_Toolbox
             Label_Hardware_NetworkAdpater_ID.Content = "当前使用的网卡的ID：" + GetNetworkAdpaterID();
             Label_GPU_Name.Content  = "图像输出显卡名称（GPU）：" + gpu_name;
             Label_GPU_Device_ID.Content = "图像输出显卡设备ID（GPU Device ID）：" + gpu_device_id;
-            Label_GPU_AP_RAM.Content = "图像输出显卡共享内存（GPU AP RAM）：" + gpu_adapter_ram + "GB";
+            double GB_GPU_AP_RAM = double.Parse(gpu_adapter_ram) / (1024 * 1024 * 1024);
+            Label_GPU_AP_RAM.Content = "图像输出显卡共享内存（GPU AP RAM）：" + GB_GPU_AP_RAM.ToString() + "GB";
             Label_GPU_driver_version.Content = "图像输出显卡驱动版本（GPU Driver Version）：" + gpu_driver_version;
             Label_GPU_video_processor.Content = "图像输出显卡核心（GPU Core）：" + gpu_video_processor;
             Label_GPU_video_memory_type.Content = "图像输出显卡显存（GPU Video Memory type）" + gpu_video_memory_type + "GB";
