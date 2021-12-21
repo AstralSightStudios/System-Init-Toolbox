@@ -9,7 +9,7 @@ namespace System_Init_Toolbox
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         //获取分区大小函数
         public static long GetHardDiskSpace(string str_HardDiskName)
@@ -134,7 +134,7 @@ namespace System_Init_Toolbox
         {
             ContentDialog gpu_installed_display_drivers_dialog = new ContentDialog
             {
-                Title = "内容",
+                Title = "Installed Display Drivers",
                 Content = mainwindow_class.gpu_installed_display_drivers,
                 CloseButtonText = "OK"
             };

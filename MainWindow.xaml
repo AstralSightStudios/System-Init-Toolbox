@@ -1,29 +1,32 @@
-﻿<Window x:Class="System_Init_Toolbox.MainWindow"
+﻿<fw:AcrylicWindow x:Class="System_Init_Toolbox.MainWindow"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:System_Init_Toolbox"
         mc:Ignorable="d"
-        Title="[Debug 1.0]  System Init Toolbox - 助你在重装系统后快速安装运行库、DirectX、Office等必备程序！" Height="420" Width="800"
+        Title="[Debug 1.0]  System Init Toolbox - 助你在重装系统后快速安装运行库等必备程序！" Height="420" Width="800"
         xmlns:ui="http://schemas.modernwpf.com/2019"
-        ui:WindowHelper.UseModernWindowStyle="True" Icon="/appicon.png" ResizeMode="CanMinimize" SizeToContent="Manual">
-    <Grid>
-        <TabControl>
+        ui:WindowHelper.UseModernWindowStyle="True" Icon="/appicon.png" ResizeMode="CanMinimize" SizeToContent="Manual"
+        ExtendViewIntoTitleBar="True"
+        ui:ThemeManager.IsThemeAware="True" Background="#70FFFFFF">
+    <Grid Background="#00E5E5E5">
+        <TabControl Background="#00E5E5E5">
             <TabItem Header="系统信息">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#00E5E5E5">
                     <Label x:Name="Label_System_Version" Content="系统版本：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,111,0,0"/>
                     <Label x:Name="Label_System_BuildLabEx" Content="系统BuildLabEx：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,141,0,0"/>
                     <Label x:Name="Label_System_Build" Content="系统build号：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,171,0,0"/>
                     <Label x:Name="Label_System_Edition_ID" Content="系统版本ID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,201,0,0"/>
                     <Label x:Name="Label_System_Product_ID" Content="系统ProductID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,231,0,0"/>
                     <Label x:Name="Label_System_Root" Content="系统根目录：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,261,0,0"/>
-                    <Image HorizontalAlignment="Left" Height="59" Margin="371,28,0,0" VerticalAlignment="Top" Width="62" Stretch="None" Source="/win11-logo.png"/>
                     <Label x:Name="Label_System_Machine_ID" Content="设备ID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,291,0,0"/>
+                    <Label Content="Windows" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="36" Background="Transparent" Width="160"/>
                 </Grid>
             </TabItem>
             <TabItem Header="硬件信息">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#00E5E5E5">
                     <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/desktop_256_regular.png"/>
                     <Label x:Name="Label_Hardware_CPU" Content="中央处理器（CPU）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,115,0,0"/>
                     <Label x:Name="Label_Hardware_RAM" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,175,0,0" Content="内存大小（RAM Size）：N/A"/>
@@ -35,10 +38,10 @@
                 </Grid>
             </TabItem>
             <TabItem Header="BIOS信息">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#00E5E5E5"/>
             </TabItem>
             <TabItem Header="显卡信息">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#00E5E5E5">
                     <Image  HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/gpu_256_regular.png" />
                     <Label x:Name="Label_GPU_Name" Content="图像输出显卡名称（GPU）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,115,0,0"/>
                     <Label x:Name="Label_GPU_Device_ID" Content="图像输出显卡设备ID（GPU Device ID）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,145,0,0"/>
@@ -51,31 +54,49 @@
 
             </TabItem>
             <TabItem Header="驱动">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="运行库" Background="#FFE5E5E5">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Header="运行库" Background="#00E5E5E5">
+                <Grid Background="#00E5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="7*"/>
                         <ColumnDefinition Width="153*"/>
                     </Grid.ColumnDefinitions>
                 </Grid>
             </TabItem>
-            <TabItem Header="Office">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="Office" Background="#00E5E5E5">
+                <Grid Background="#00E5E5E5"/>
             </TabItem>
             <TabItem Header="DirectX">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#00E5E5E5"/>
             </TabItem>
             <TabItem Header="软件">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#00E5E5E5"/>
             </TabItem>
             <TabItem Header="设置">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#00E5E5E5"/>
             </TabItem>
             <TabItem Header="关于">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#00E5E5E5">
+                    <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/appicon.png"/>
+                    <Label Content="System Init Toolbox" Margin="255,115,255,0" VerticalAlignment="Top" FontSize="36" FontFamily="Segoe UI Light" Height="54"/>
+                    <Label Content="程序编写/UI设计：" Margin="188,192,458,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Height="27"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="491,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Width="104" Height="29">
+                        <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234" Height="33" VerticalAlignment="Top">
+                            @Searchstars
+                         </ui:HyperlinkButton>
+                    </TextBlock>
+                    <Label Content="程序所使用到的主题：" Margin="134,224,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Height="27"/>
+                    <ui:HyperlinkButton NavigateUri="https://github.com/Kinnara/ModernWpf" Height="33" VerticalAlignment="Top" Content="Kinnara/ModernWPF" Margin="324,221,0,0"/>
+                    <ui:HyperlinkButton NavigateUri="https://github.com/sourcechord/FluentWPF" Height="33" VerticalAlignment="Top" Content="sourcechord/FluentWPF" Margin="515,221,0,0"/>
+                    <Label Content="[开发测试版本]  Debug 1.0" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
+                    <Label Content="Build31" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
+                    <Label Content="此程序UI遵循Microsoft Fluent设计风格" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
+                    <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Height="27"/>
+                    <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="xiaoniu1234/System-init-Toolbox" Margin="324,253,0,0"/>
+                    <Label Content="欢迎提出issues/pull requests哦！" Margin="564,262,37,0" VerticalAlignment="Top" FontSize="12" FontFamily="Segoe UI Light" Height="27"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
-</Window>
+</fw:AcrylicWindow>

@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appicon.png" />
     <None Remove="desktop_256_regular.png" />
     <None Remove="desktop_32_regular.png" />
     <None Remove="desktop_32_regular.svg" />
@@ -24,22 +25,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentWPF" Version="0.9.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="System.Management" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="appicon.png" />
+    <Resource Include="appicon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Resource>
     <Resource Include="desktop_256_regular.png" />
     <Resource Include="gpu_256_regular.png" />
     <Resource Include="win11-logo.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="appicon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>
