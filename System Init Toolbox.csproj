@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <None Remove="appicon.png" />
+    <None Remove="baseboard_256_regular.png" />
     <None Remove="desktop_256_regular.png" />
     <None Remove="desktop_32_regular.png" />
     <None Remove="desktop_32_regular.svg" />
@@ -35,6 +36,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </Resource>
+    <Resource Include="baseboard_256_regular.png" />
     <Resource Include="desktop_256_regular.png" />
     <Resource Include="gpu_256_regular.png" />
     <Resource Include="win11-logo.png" />

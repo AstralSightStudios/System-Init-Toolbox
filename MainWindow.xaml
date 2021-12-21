@@ -13,7 +13,7 @@
         ui:ThemeManager.IsThemeAware="True" Background="#70FFFFFF">
     <Grid Background="#00E5E5E5">
         <TabControl Background="#00E5E5E5">
-            <TabItem Header="系统信息">
+            <TabItem Header="系统信息" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <Label x:Name="Label_System_Version" Content="系统版本：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,111,0,0"/>
                     <Label x:Name="Label_System_BuildLabEx" Content="系统BuildLabEx：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,141,0,0"/>
@@ -22,14 +22,14 @@
                     <Label x:Name="Label_System_Product_ID" Content="系统ProductID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,231,0,0"/>
                     <Label x:Name="Label_System_Root" Content="系统根目录：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,261,0,0"/>
                     <Label x:Name="Label_System_Machine_ID" Content="设备ID：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,291,0,0"/>
-                    <Label Content="Windows" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="36" Background="Transparent" Width="160"/>
+                    <Label Content="Windows" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="36" Background="Transparent" Width="158"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="硬件信息">
+            <TabItem Header="硬件信息" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/desktop_256_regular.png"/>
-                    <Label x:Name="Label_Hardware_CPU" Content="中央处理器（CPU）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,115,0,0"/>
-                    <Label x:Name="Label_Hardware_RAM" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,175,0,0" Content="内存大小（RAM Size）：N/A"/>
+                    <Label x:Name="Label_Hardware_CPU" Content="中央处理器（CPU）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,115,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_RAM" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,175,0,0" Content="内存大小（RAM Size）：N/A" FontFamily="Source Han Sans SC"/>
                     <Label x:Name="Label_Hardware_Graphics_card" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,205,0,0" Content="图像输出显卡（Graphics Card）：N/A"/>
                     <Label x:Name="Label_Hardware_CPU_Identifier" Content="中央处理器标识符（CPU Identifier）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,145,0,0"/>
                     <Label x:Name="Label_Hardware_C_Size" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,235,0,0" Content="C盘大小：N/A"/>
@@ -37,10 +37,19 @@
                     <Label x:Name="Label_Hardware_NetworkAdpater_ID" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,295,0,0" Content="当前使用的网卡的ID：N/A"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="BIOS信息">
-                <Grid Background="#00E5E5E5"/>
+            <TabItem Header="BIOS信息" FontFamily="Source Han Sans SC">
+                <Grid Background="#00E5E5E5">
+                    <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/baseboard_256_regular.png"/>
+                    <Label x:Name="Label_Hardware_BaseBoard_Manufacturer" Content="主板制造商：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,115,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_BaseBoard_Product" Content="主板型号：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,145,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_BaseBoard_Version" Content="主板版本：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,175,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_BIOS_ReleaseDate" Content="BIOS发布日期：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,205,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_BIOS_Vendor" Content="BIOS提供商：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,235,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_BIOS_Version" Content="BIOS版本：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,265,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="Label_Hardware_BIOS_Manufacturer" Content="BIOS制造商：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,295,0,0" FontFamily="Source Han Sans SC"/>
+                </Grid>
             </TabItem>
-            <TabItem Header="显卡信息">
+            <TabItem Header="显卡信息" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <Image  HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/gpu_256_regular.png" />
                     <Label x:Name="Label_GPU_Name" Content="图像输出显卡名称（GPU）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,115,0,0"/>
@@ -53,10 +62,10 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="驱动">
+            <TabItem Header="驱动" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="运行库" Background="#00E5E5E5">
+            <TabItem Header="运行库" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="7*"/>
@@ -64,25 +73,25 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </TabItem>
-            <TabItem Header="Office" Background="#00E5E5E5">
+            <TabItem Header="Office" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="DirectX">
+            <TabItem Header="DirectX" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="软件">
+            <TabItem Header="软件" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="设置">
+            <TabItem Header="设置" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="关于">
+            <TabItem Header="关于" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/appicon.png"/>
-                    <Label Content="System Init Toolbox" Margin="255,115,255,0" VerticalAlignment="Top" FontSize="36" FontFamily="Segoe UI Light" Height="54"/>
-                    <Label Content="程序编写/UI设计：" Margin="188,192,458,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Height="27"/>
+                    <Label Content="System Init Toolbox" Margin="242,110,242,0" VerticalAlignment="Top" FontSize="36" FontFamily="Roboto" Height="54"/>
+                    <Label Content="程序编写/UI设计：" Margin="188,192,458,0" VerticalAlignment="Top" FontSize="18" FontFamily="SourceHanSansSC" Height="27"/>
                     <TextBlock HorizontalAlignment="Left" Margin="491,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Width="104" Height="29">
-                        <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234" Height="33" VerticalAlignment="Top">
+                        <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234" Height="33" VerticalAlignment="Top" FontFamily="SourceHanSansSC">
                             @Searchstars
                          </ui:HyperlinkButton>
                     </TextBlock>
@@ -90,7 +99,7 @@
                     <ui:HyperlinkButton NavigateUri="https://github.com/Kinnara/ModernWpf" Height="33" VerticalAlignment="Top" Content="Kinnara/ModernWPF" Margin="324,221,0,0"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/sourcechord/FluentWPF" Height="33" VerticalAlignment="Top" Content="sourcechord/FluentWPF" Margin="515,221,0,0"/>
                     <Label Content="[开发测试版本]  Debug 1.0" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
-                    <Label Content="Build31" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
+                    <Label Content="Build2" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
                     <Label Content="此程序UI遵循Microsoft Fluent设计风格" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
                     <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Segoe UI Light" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="xiaoniu1234/System-init-Toolbox" Margin="324,253,0,0"/>

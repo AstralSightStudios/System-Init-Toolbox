@@ -127,6 +127,13 @@ namespace System_Init_Toolbox
             Label_GPU_driver_version.Content = "图像输出显卡驱动版本（GPU Driver Version）：" + gpu_driver_version;
             Label_GPU_video_processor.Content = "图像输出显卡核心（GPU Core）：" + gpu_video_processor;
             Label_GPU_video_memory_type.Content = "图像输出显卡显存（GPU Video Memory type）" + gpu_video_memory_type + "GB";
+            Label_Hardware_BaseBoard_Manufacturer.Content = "主板制造商：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BaseBoardManufacturer");
+            Label_Hardware_BaseBoard_Product.Content = "主板型号：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BaseBoardProduct");
+            Label_Hardware_BaseBoard_Version.Content = "主板版本：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BaseBoardVersion");
+            Label_Hardware_BIOS_Vendor.Content = "BIOS提供商：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BIOSVendor");
+            Label_Hardware_BIOS_ReleaseDate.Content = "BIOS发布日期：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BIOSReleaseDate");
+            Label_Hardware_BIOS_Version.Content = "BIOS版本：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BIOSVersion");
+            Label_Hardware_BIOS_Manufacturer.Content = "BIOS制造商：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("SystemManufacturer");
         }
 
         //输出变量gpu_installed_display_drivers
