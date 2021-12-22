@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System.Management;
 using ModernWpf.Controls;
 using System.Net;
+using System.Diagnostics;
 
 namespace System_Init_Toolbox
 {
@@ -172,6 +173,103 @@ namespace System_Init_Toolbox
                 CloseButtonText = "OK"
             };
             ContentDialogResult result = await debug_output_gitee_link_content.ShowAsync();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            driver_download_window driver_download_window = new driver_download_window("tst","test test test test test test test","1145.14");
+            driver_download_window.Show();
+        }
+
+        private async void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //NVIDIA显卡驱动下载
+            //屎山代码，谁能帮忙改改😭😭😭
+            ContentDialog nv_combobox_null_tips = new ContentDialog
+            {
+                Title = "下拉框为空",
+                Content = "请先在上面选择NVIDIA驱动平台与版本再点下载按钮哦~",
+                CloseButtonText = "OK"
+            };
+            string nvidia_uri = "";
+            //debug_nv1.Content = nv_platform.SelectedIndex + "        " + nv_driver_version.SelectedIndex;
+            if (nv_platform.Text == "") {
+                ContentDialogResult result = await nv_combobox_null_tips.ShowAsync();
+            }
+            else if (nv_driver_version.Text == "")
+            {
+                ContentDialogResult result = await nv_combobox_null_tips.ShowAsync();
+            }  
+            if(nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 1)
+            {
+                ContentDialog nv_notebook_gpu_error = new ContentDialog
+                {
+                    Title = "显卡错误",
+                    Content = "虽然但是移动端好像没有卡在这个日期停更...建议换成2019.4.11批次的下载。",
+                    CloseButtonText = "OK"
+                };
+                ContentDialogResult result = await nv_notebook_gpu_error.ShowAsync();
+            }
+            if(nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 0)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-lastet.txt"), "NVIDIA笔记本显卡驱动", "最新版本");
+                driver_download_window.Show();
+            }
+            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 2)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20190411.txt"), "NVIDIA笔记本显卡驱动", "2019.4.11 425.31");
+                driver_download_window.Show();
+            }
+            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 3)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20180327.txt"), "NVIDIA笔记本显卡驱动", "2018.3.27 391.35");
+                driver_download_window.Show();
+            }
+            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 4)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20161214.txt"), "NVIDIA笔记本显卡驱动", "2016.12.14 342.01");
+                driver_download_window.Show();
+            }
+            if (nv_driver_version.SelectedIndex == 5)
+            {
+                ContentDialog nv_notebook_old_gpu = new ContentDialog
+                {
+                    Title = "远古显卡",
+                    Content = "对于过于远古的显卡，还请自行前往官网下载驱动。\n官网：https://www.nvidia.cn/geforce/drivers",
+                    CloseButtonText = "OK"
+                };
+                ContentDialogResult result = await nv_notebook_old_gpu.ShowAsync();
+            }
+            if (nv_platform.Text == "台式电脑" && nv_driver_version.SelectedIndex == 2)
+            {
+                ContentDialog nv_notebook_gpu_error = new ContentDialog
+                {
+                    Title = "显卡错误",
+                    Content = "虽然但是桌面端好像没有卡在这个日期停更...建议换成2018.3.27批次的下载。",
+                    CloseButtonText = "OK"
+                };
+                ContentDialogResult result = await nv_notebook_gpu_error.ShowAsync();
+            }
+            if (nv_platform.Text == "台式电脑" && nv_driver_version.SelectedIndex == 0)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-desktop-lastet.txt"), "NVIDIA显卡驱动", "最新版本");
+                driver_download_window.Show();
+            }
+            if (nv_platform.Text == "台式电脑" && nv_driver_version.SelectedIndex == 1)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-desktop-20210920.txt"), "NVIDIA显卡驱动", "2021.9.20 472.12");
+                driver_download_window.Show();
+            }
+            if (nv_platform.Text == "台式电脑" && nv_driver_version.SelectedIndex == 3)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-desktop-20180327.txt"), "NVIDIA显卡驱动", "2018.3.27 391.35");
+                driver_download_window.Show();
+            }
+            if (nv_platform.Text == "台式电脑" && nv_driver_version.SelectedIndex == 4)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-desktop-20161214.txt"), "NVIDIA显卡驱动", "2016.12.14 342.01");
+                driver_download_window.Show();
+            }
         }
     }
     }
