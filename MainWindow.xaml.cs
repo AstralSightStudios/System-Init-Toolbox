@@ -191,7 +191,6 @@ namespace System_Init_Toolbox
                 Content = "请先在上面选择NVIDIA驱动平台与版本再点下载按钮哦~",
                 CloseButtonText = "OK"
             };
-            string nvidia_uri = "";
             //debug_nv1.Content = nv_platform.SelectedIndex + "        " + nv_driver_version.SelectedIndex;
             if (nv_platform.Text == "") {
                 ContentDialogResult result = await nv_combobox_null_tips.ShowAsync();
@@ -268,6 +267,41 @@ namespace System_Init_Toolbox
             if (nv_platform.Text == "台式电脑" && nv_driver_version.SelectedIndex == 4)
             {
                 driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-desktop-20161214.txt"), "NVIDIA显卡驱动", "2016.12.14 342.01");
+                driver_download_window.Show();
+            }
+        }
+
+        private async void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            //amd的驱动下载简单的多
+            //但还是屎山代码😭😭😭
+            ContentDialog amd_combobox_null_tips = new ContentDialog
+            {
+                Title = "下拉框为空",
+                Content = "请先在上面选择AMD驱动平台与版本再点下载按钮哦~",
+                CloseButtonText = "OK"
+            };
+            if (amd_platform.Text == "")
+            {
+                ContentDialogResult result = await amd_combobox_null_tips.ShowAsync();
+            }
+            else if (amd_driver_version.Text == "")
+            {
+                ContentDialogResult result = await amd_combobox_null_tips.ShowAsync();
+            }
+            if (amd_platform.Text == "台式电脑/笔记本" && amd_driver_version.SelectedIndex == 0)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/amd-lastet.txt"), "AMD显卡驱动", "最新版本");
+                driver_download_window.Show();
+            }
+            if (amd_platform.Text == "台式电脑/笔记本" && amd_driver_version.SelectedIndex == 1)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/amd-20210621.txt"), "AMD显卡驱动", "2021.6.21 21.5.2");
+                driver_download_window.Show();
+            }
+            if (amd_platform.Text == "台式电脑/笔记本" && amd_driver_version.SelectedIndex == 2)
+            {
+                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/amd-20150729.txt"), "AMD显卡驱动", "2021.7.29 15.7.1");
                 driver_download_window.Show();
             }
         }
