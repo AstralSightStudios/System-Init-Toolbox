@@ -11,10 +11,10 @@
     <Grid Background="#00E5E5E5">
         <Label x:Name="DriverNameLabel" Content="Driver Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
         <Label x:Name="DriverVersionLabel" Content="Driver Version" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="12"/>
-        <ProgressBar HorizontalAlignment="Center" Height="0" Width="234" LargeChange="0" Orientation="Horizontal"/>
-        <Button Content="立即下载" Margin="305,10,0,0" VerticalAlignment="Top" Height="34" Width="85" FontSize="14"/>
-        <Button Content="运行安装程序" Margin="83,135,0,0" VerticalAlignment="Top" Width="96" FontSize="12"/>
-        <Button Content="退出" Margin="221,135,0,0" VerticalAlignment="Top" Width="96" FontSize="12"/>
+        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Center" Height="0" Width="234" LargeChange="0" Orientation="Horizontal"/>
+        <Button x:Name="downbutton" Content="立即下载" Margin="305,10,0,0" VerticalAlignment="Top" Height="34" Width="85" FontSize="14" Click="Button_Click"/>
+        <Button Content="运行安装程序" Margin="0,147,0,0" VerticalAlignment="Top" Width="96" FontSize="12" IsEnabled="False" HorizontalAlignment="Center"/>
+        <Label x:Name="label1" Content="N/A" HorizontalAlignment="Left" Margin="83,99,0,0" VerticalAlignment="Top" FontSize="11"/>
 
     </Grid>
 </fw:AcrylicWindow>

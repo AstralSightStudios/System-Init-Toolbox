@@ -4,7 +4,7 @@ using System.Security.Permissions;
 
 //  立即退出程序 Environment.Exit(0);
 
-namespace StarGamesDeveloperApp
+namespace System_Init_Toolbox
 {
     public static class DispatcherHelper
     {

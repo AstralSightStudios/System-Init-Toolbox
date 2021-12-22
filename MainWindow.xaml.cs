@@ -304,6 +304,16 @@ namespace System_Init_Toolbox
                 driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/amd-20150729.txt"), "AMD显卡驱动", "2021.7.29 15.7.1");
                 driver_download_window.Show();
             }
+            if (nv_driver_version.SelectedIndex == 3)
+            {
+                ContentDialog amd_old_gpu = new ContentDialog
+                {
+                    Title = "远古显卡",
+                    Content = "对于过于远古的显卡，还请自行前往官网下载驱动。\n官网：https://www.amd.com/zh-hans/support",
+                    CloseButtonText = "OK"
+                };
+                ContentDialogResult result = await amd_old_gpu.ShowAsync();
+            }
         }
     }
     }
