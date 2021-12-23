@@ -274,6 +274,8 @@ namespace System_Init_Toolbox
         private async void Button_Click_5(object sender, RoutedEventArgs e)
         {
             //amd的驱动下载简单的多
+            //但是会卡死
+            //amd我焯你🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎
             //但还是屎山代码😭😭😭
             ContentDialog amd_combobox_null_tips = new ContentDialog
             {
@@ -296,7 +298,8 @@ namespace System_Init_Toolbox
             }
             if (amd_platform.Text == "台式电脑/笔记本" && amd_driver_version.SelectedIndex == 1)
             {
-                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/amd-20210621.txt"), "AMD显卡驱动", "2021.6.21 21.5.2");
+                string uri = await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/amd-20210621.txt");
+                driver_download_window driver_download_window = new driver_download_window(uri, "AMD显卡驱动", "2021.6.21 21.5.2");
                 driver_download_window.Show();
             }
             if (amd_platform.Text == "台式电脑/笔记本" && amd_driver_version.SelectedIndex == 2)
