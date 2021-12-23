@@ -124,13 +124,16 @@
             </TabItem>
             <TabItem Header="运行库" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
-
+                    <Button Content=".NET Framework" Margin="0,110,0,0" VerticalAlignment="Top" Height="40" Width="274" HorizontalAlignment="Center"/>
+                    <Button Content=".NET" Margin="0,155,0,0" VerticalAlignment="Top" Height="40" Width="274" HorizontalAlignment="Center"/>
+                    <Button Content="Visual C++" Margin="0,200,0,0" VerticalAlignment="Top" Height="40" Width="274" HorizontalAlignment="Center"/>
+                    <Button Content="Java" Margin="0,245,0,0" VerticalAlignment="Top" Height="40" Width="274" HorizontalAlignment="Center"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Office" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
-            <TabItem Header="DirectX" FontFamily="Source Han Sans SC">
+            <TabItem Header="图形库" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>
             </TabItem>
             <TabItem Header="软件" FontFamily="Source Han Sans SC">

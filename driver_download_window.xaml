@@ -7,14 +7,15 @@
         xmlns:local="clr-namespace:System_Init_Toolbox"
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
-        Title="System Init Toolbox - 驱动下载器" Height="200" Width="400" Icon="/appicon.png" FontFamily="Source Han Sans SC">
+        Title="System Init Toolbox - 驱动下载器" Height="250" Width="400" Icon="/appicon.png" FontFamily="Source Han Sans SC">
     <Grid Background="#00E5E5E5">
         <Label x:Name="DriverNameLabel" Content="Driver Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
         <Label x:Name="DriverVersionLabel" Content="Driver Version" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="12"/>
         <ProgressBar x:Name="progressBar1" HorizontalAlignment="Center" Height="0" Width="234" LargeChange="0" Orientation="Horizontal"/>
         <Button x:Name="downbutton" Content="立即下载" Margin="305,10,0,0" VerticalAlignment="Top" Height="34" Width="85" FontSize="14" Click="Button_Click"/>
-        <Button Content="运行安装程序" Margin="0,147,0,0" VerticalAlignment="Top" Width="96" FontSize="12" IsEnabled="False" HorizontalAlignment="Center"/>
-        <Label x:Name="label1" Content="N/A" HorizontalAlignment="Left" Margin="83,99,0,0" VerticalAlignment="Top" FontSize="11"/>
+        <Button x:Name="run_setup_bt" Content="运行安装程序" Margin="0,147,0,0" VerticalAlignment="Top" Width="96" FontSize="12" IsEnabled="False" HorizontalAlignment="Center" Click="Button_Click_1"/>
+        <Label x:Name="label1" Content="N/A" HorizontalAlignment="Left" Margin="83,124,0,0" VerticalAlignment="Top" FontSize="11"/>
+        <Label x:Name="dbg_label" Content=" " HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </fw:AcrylicWindow>

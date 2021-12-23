@@ -3,6 +3,8 @@ using System.IO;
 using System.Net;
 using System.Windows;
 using ModernWpf.Controls;
+using System.Threading;
+using System.Diagnostics;
 
 namespace System_Init_Toolbox
 {
@@ -16,6 +18,7 @@ namespace System_Init_Toolbox
         private HttpWebResponse response;
         private Stream wb;
         private string global_uri = "";
+        System.Windows.Forms.SaveFileDialog dialog;
         public driver_download_window(string uri, string name = "Driver Name", string version = "Driver Version")
         {
             InitializeComponent();
@@ -59,7 +62,11 @@ namespace System_Init_Toolbox
             bool result = false;//下载结果
             try
             {
-                response = WebRequest.Create(http_file_url).GetResponse();
+                WebHeaderCollection wb_nb = new WebHeaderCollection();
+                wb_nb.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62");
+                WebRequest aas = WebRequest.Create(http_file_url);
+                aas.Headers = wb_nb;
+                response = aas.GetResponse();
                 result = response == null ? false : true;
             }
             catch (Exception)
@@ -79,7 +86,10 @@ namespace System_Init_Toolbox
         {
             try
             {
+                WebHeaderCollection wb_nb = new WebHeaderCollection();
+                wb_nb.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62");
                 driver_download_window.request = (HttpWebRequest)WebRequest.Create(URL);
+                driver_download_window.request.Headers = wb_nb;
                 driver_download_window.response = (HttpWebResponse)driver_download_window.request.GetResponse();
                 long totalLength = driver_download_window.response.ContentLength;
                 progressBar1.Maximum = (int)totalLength;
@@ -103,56 +113,36 @@ namespace System_Init_Toolbox
             }
             catch (Exception exception)
             {
-                // wb速来测试bug
                 MessageBox.Show(exception.ToString());
                 return false;
             }
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        public async void Button_Click(object sender, RoutedEventArgs e)
         {
             downbutton.IsEnabled = false;
             downloading = true;
-            System.Windows.Forms.SaveFileDialog dialog = new System.Windows.Forms.SaveFileDialog();//选择文件夹
+            dialog = new System.Windows.Forms.SaveFileDialog();//选择文件夹
             dialog.FileName = "Graphics Driver.exe";
             dialog.Filter = "compressed files (*.exe)|*.exe";
             FileStream fs;
-            ContentDialog dbg_filestream = new ContentDialog
-            {
-                Title = "OK",
-                Content = "FileStream fs已执行",
-                CloseButtonText = "OK"
-            };
-            ContentDialogResult result = await dbg_filestream.ShowAsync();
             //bool b = DownloadFile(global_uri, fs, progressBar1, label1, this);
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                ContentDialog dbg_dialog = new ContentDialog
-                {
-                    Title = "OK",
-                    Content = "if判断成功    dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK",
-                    CloseButtonText = "OK"
-                };
-                ContentDialogResult result_two = await dbg_dialog.ShowAsync();
+                //dbg_label.Content = dialog.FileName;
                 if ((fs = (FileStream)dialog.OpenFile()) != null)
                 {
-                    ContentDialog dbg_dialog_no_null = new ContentDialog
-                    {
-                        Title = "OK",
-                        Content = "if判断成功    fs = (FileStream)dialog.OpenFile()) != null\n顺带dialog一下global uri：\n" + global_uri,
-                        CloseButtonText = "OK"
-                    };
-                    ContentDialogResult result_three = await dbg_dialog_no_null.ShowAsync();
                     if (HttpFileExist(global_uri))
                     {
-                        ContentDialog StartDownloadTips = new ContentDialog
-                        {
-                            Title = "Start",
-                            Content = "HttpFileExist验证通过，开始下载咯！",
-                            CloseButtonText = "OK"
-                        };
-                        ContentDialogResult result_four = await StartDownloadTips.ShowAsync();
                         bool b = DownloadFile(global_uri, fs, progressBar1, label1, this);
+                        if (b)
+                        {
+                            run_setup_bt.IsEnabled = true;
+                        }
+                        else
+                        {
+                            run_setup_bt.IsEnabled = false;
+                        }
                     }
                     else
                     {
@@ -166,6 +156,20 @@ namespace System_Init_Toolbox
                     }
                 }
             }
+        }
+        public void run_setup_func()
+        {
+            dbg_label.Content = "等待显卡驱动安装程序结束......";
+            Process process = new Process();//创建进程对象    
+            ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName); // 括号里是(程序名,参数)
+            process.StartInfo = startInfo;
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            run_setup_func();
         }
     }
 }

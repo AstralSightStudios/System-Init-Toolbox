@@ -274,9 +274,18 @@ namespace System_Init_Toolbox
         private async void Button_Click_5(object sender, RoutedEventArgs e)
         {
             //amd的驱动下载简单的多
-            //但是会卡死
-            //amd我焯你🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎
             //但还是屎山代码😭😭😭
+            //而且会卡死
+            //初步诊断是amd官网防爬虫的问题
+            //amd我焯你🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎🐎
+            ContentDialog amd_tips = new ContentDialog
+            {
+                Title = "AMD驱动下载关闭提示",
+                Content = "由于AMD驱动下载链接的问题，此程序目前无法下载AMD显卡驱动，此问题可能会在以后解决，所以目前还请自行移步至官网\"amd.com\"下载。\nSo Amd Fuck You",
+                CloseButtonText = "OK"
+            };
+            ContentDialogResult result = await amd_tips.ShowAsync();
+            /*
             ContentDialog amd_combobox_null_tips = new ContentDialog
             {
                 Title = "下拉框为空",
@@ -317,6 +326,7 @@ namespace System_Init_Toolbox
                 };
                 ContentDialogResult result = await amd_old_gpu.ShowAsync();
             }
+            */
         }
     }
     }
