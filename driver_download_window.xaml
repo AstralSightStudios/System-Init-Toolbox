@@ -12,8 +12,8 @@
         <Label x:Name="DriverNameLabel" Content="Driver Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
         <Label x:Name="DriverVersionLabel" Content="Driver Version" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="12"/>
         <ProgressBar x:Name="progressBar1" HorizontalAlignment="Center" Height="0" Width="234" LargeChange="0" Orientation="Horizontal"/>
-        <Button x:Name="downbutton" Content="立即下载" Margin="305,10,0,0" VerticalAlignment="Top" Height="34" Width="85" FontSize="14" Click="Button_Click"/>
-        <Button x:Name="run_setup_bt" Content="运行安装程序" Margin="0,147,0,0" VerticalAlignment="Top" Width="96" FontSize="12" IsEnabled="False" HorizontalAlignment="Center" Click="Button_Click_1"/>
+        <Button x:Name="downbutton" Content="立即下载" Margin="305,10,0,0" VerticalAlignment="Top" Height="34" Width="85" FontSize="14" Click="Button_Click" FontFamily="Source Han Sans SC"/>
+        <Button x:Name="run_setup_bt" Content="运行安装程序" Margin="0,147,0,0" VerticalAlignment="Top" Width="96" FontSize="12" IsEnabled="False" HorizontalAlignment="Center" Click="Button_Click_1" FontFamily="Source Han Sans SC"/>
         <Label x:Name="label1" Content="N/A" HorizontalAlignment="Left" Margin="83,124,0,0" VerticalAlignment="Top" FontSize="11"/>
         <Label x:Name="dbg_label" Content=" " HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top"/>
 
