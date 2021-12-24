@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:System_Init_Toolbox"
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
-        Title="System Init Toolbox - 驱动下载器" Height="250" Width="400" Icon="/appicon.png" FontFamily="Source Han Sans SC">
+        Title="System Init Toolbox - 驱动下载器" Height="250" Width="400" Icon="/appicon.png" FontFamily="Source Han Sans SC" ResizeMode="NoResize">
     <Grid Background="#00E5E5E5">
         <Label x:Name="DriverNameLabel" Content="Driver Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
         <Label x:Name="DriverVersionLabel" Content="Driver Version" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="12"/>

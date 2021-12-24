@@ -25,6 +25,7 @@
     <None Remove="desktop_32_regular.svg" />
     <None Remove="dev_256_regular.png" />
     <None Remove="gpu_256_regular.png" />
+    <None Remove="runtime_256_regular.png" />
     <None Remove="win-logo.png" />
     <None Remove="win11-logo.png" />
   </ItemGroup>
@@ -54,6 +55,7 @@
     <Resource Include="desktop_256_regular.png" />
     <Resource Include="dev_256_regular.png" />
     <Resource Include="gpu_256_regular.png" />
+    <Resource Include="runtime_256_regular.png" />
     <Resource Include="win11-logo.png" />
   </ItemGroup>
 
