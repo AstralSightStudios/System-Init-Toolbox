@@ -11,6 +11,7 @@
     <StartupObject>System_Init_Toolbox.App</StartupObject>
     <NeutralLanguage>zh-CN</NeutralLanguage>
     <AnalysisLevel>none</AnalysisLevel>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
