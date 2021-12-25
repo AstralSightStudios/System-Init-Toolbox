@@ -196,15 +196,18 @@ namespace System_Init_Toolbox
             dotnet48_Process.StartInfo.CreateNoWindow = ToggleSwitch_NoWindowInstall.IsOn;
             dotnet48_Process.Start();
             dotnet48_Process.WaitForExit();
-            status_label.Content = "清理残留中...";
-            File.Delete("./netframework452.exe");
-            File.Delete("./netframework46.exe");
-            File.Delete("./netframework461.exe");
-            File.Delete("./netframework462.exe");
-            File.Delete("./netframework47.exe");
-            File.Delete("./netframework471.exe");
-            File.Delete("./netframework472.exe");
-            File.Delete("./netframework48.exe");
+            if (ToggleSwitch_AfterInstallRemove_exe.IsOn)
+            {
+                status_label.Content = "清理残留中...";
+                File.Delete("./netframework452.exe");
+                File.Delete("./netframework46.exe");
+                File.Delete("./netframework461.exe");
+                File.Delete("./netframework462.exe");
+                File.Delete("./netframework47.exe");
+                File.Delete("./netframework471.exe");
+                File.Delete("./netframework472.exe");
+                File.Delete("./netframework48.exe");
+            }
             progressBar1.IsIndeterminate = false;
             progressBar1.Value = 100;
             status_label.Content = "全部安装完成！";

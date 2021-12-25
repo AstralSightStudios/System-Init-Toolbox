@@ -29,6 +29,8 @@
                 <Grid Background="#00E5E5E5">
                     <Label Content="静默安装：" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" FontSize="16"/>
                     <ui:ToggleSwitch x:Name="ToggleSwitch_NoWindowInstall" Width="77" Margin="24,45,0,0" VerticalAlignment="Top" OffContent="关" OnContent="开" IsOn="True" FontFamily="Source Han Sans SC"/>
+                    <Label Content="安装完成后自动清理残留：" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <ui:ToggleSwitch x:Name="ToggleSwitch_AfterInstallRemove_exe" Width="76" Margin="24,110,0,0" VerticalAlignment="Top" OffContent="否" OnContent="是" IsOn="True" FontFamily="Source Han Sans SC"/>
                 </Grid>
             </TabItem>
         </TabControl>
