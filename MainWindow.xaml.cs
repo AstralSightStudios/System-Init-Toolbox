@@ -334,5 +334,11 @@ namespace System_Init_Toolbox
             net_framework net_framework = new net_framework();
             net_framework.Show();
         }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            dotnet dotnet = new dotnet();
+            dotnet.Show();
+        }
     }
     }

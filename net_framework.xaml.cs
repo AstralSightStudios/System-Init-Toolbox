@@ -28,11 +28,9 @@ namespace System_Init_Toolbox
                 //若窗口关闭即停止下载
                 wb.Close();
                 response.Close();
+                request.Abort();
             }
-            //保险起见，即使你不是downloading我也关一遍
-            wb.Close();
-            response.Close();
-            this.Close();
+            Environment.Exit(0);
         }
         public static void Delay(int mm)
         {
@@ -105,6 +103,7 @@ namespace System_Init_Toolbox
             down_and_install_button.IsEnabled = false;
             status_label.Content = "等待下载...";
             progressBar1.IsIndeterminate = true;
+            //试用Delay，为了让label有时间反应过来切换
             Delay(3000);
             progressBar1.IsIndeterminate=false;
             FileStream down_452_fs = new FileStream("netframework452.exe",FileMode.OpenOrCreate);
