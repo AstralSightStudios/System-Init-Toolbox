@@ -340,5 +340,11 @@ namespace System_Init_Toolbox
             dotnet dotnet = new dotnet();
             dotnet.Show();
         }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            visualCPP visualCPP = new visualCPP();
+            visualCPP.Show();
+        }
     }
     }

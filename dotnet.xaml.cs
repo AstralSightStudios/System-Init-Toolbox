@@ -24,6 +24,18 @@ namespace System_Init_Toolbox
         public dotnet()
         {
             InitializeComponent();
+            this.Closing += _download_window_closing;
+        }
+        public void _download_window_closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (downloading)
+            {
+                //若窗口关闭即停止下载
+                wb.Close();
+                response.Close();
+                request.Abort();
+                Environment.Exit(0);
+            }
         }
         public static void Delay(int mm)
         {
@@ -110,7 +122,6 @@ namespace System_Init_Toolbox
             DownloadFile("https://download.visualstudio.microsoft.com/download/pr/df4372ca-82c8-4bfa-acf9-c49e27279e7e/6bddefd26964017ff520dc1443029e04/dotnet-runtime-6.0.1-win-x64.exe", down_60_fs, progressBar1, label1, this);
             wb.Close();
             down_60_fs.Close();
-            downloading = false;
             down_and_install_button.IsEnabled = false;
             progressBar1.IsIndeterminate = true;
             status_label.Content = "正在安装.NET Core 3.1";
@@ -151,6 +162,7 @@ namespace System_Init_Toolbox
             progressBar1.IsIndeterminate = false;
             progressBar1.Value = 100;
             status_label.Content = "全部安装完成！";
+            downloading = false;
         }
     }
 }

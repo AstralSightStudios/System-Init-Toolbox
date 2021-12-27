@@ -29,8 +29,8 @@ namespace System_Init_Toolbox
                 wb.Close();
                 response.Close();
                 request.Abort();
+                Environment.Exit(0);
             }
-            Environment.Exit(0);
         }
         public static void Delay(int mm)
         {
@@ -150,7 +150,6 @@ namespace System_Init_Toolbox
             DownloadFile("https://go.microsoft.com/fwlink/?linkid=2088631", down_48_fs, progressBar1, label1, this);
             wb.Close();
             down_48_fs.Close();
-            downloading = false;
             down_and_install_button.IsEnabled = false;
             progressBar1.IsIndeterminate = true;
             status_label.Content = "正在安装.NET Framework 3.5";
@@ -242,6 +241,7 @@ namespace System_Init_Toolbox
             progressBar1.IsIndeterminate = false;
             progressBar1.Value = 100;
             status_label.Content = "全部安装完成！";
+            downloading = false;
         }
     }
 }
