@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     <RootNamespace>System_Init_Toolbox</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
@@ -12,6 +12,7 @@
     <NeutralLanguage>zh-CN</NeutralLanguage>
     <AnalysisLevel>none</AnalysisLevel>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -37,6 +38,9 @@
 
   <ItemGroup>
     <PackageReference Include="FluentWPF" Version="0.9.0" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.4.1" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22523-preview" />
+    <PackageReference Include="Microsoft.Windows.WinMD" Version="1.0.210629.2" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="System.Management" Version="6.0.0" />
   </ItemGroup>
