@@ -345,5 +345,11 @@ namespace System_Init_Toolbox
             visualCPP visualCPP = new visualCPP();
             visualCPP.Show();
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            java java = new java();
+            java.Show();
+        }
     }
 }
