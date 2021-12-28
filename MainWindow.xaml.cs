@@ -208,25 +208,38 @@ namespace System_Init_Toolbox
                 };
                 ContentDialogResult result = await nv_notebook_gpu_error.ShowAsync();
             }
-            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 0)
+            try
             {
-                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-lastet.txt"), "NVIDIA笔记本显卡驱动", "最新版本");
-                driver_download_window.Show();
+                if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 0)
+                {
+                    driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-lastet.txt"), "NVIDIA笔记本显卡驱动", "最新版本");
+                    driver_download_window.Show();
+                }
+                if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 2)
+                {
+                    driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20190411.txt"), "NVIDIA笔记本显卡驱动", "2019.4.11 425.31");
+                    driver_download_window.Show();
+                }
+                if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 3)
+                {
+                    driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20180327.txt"), "NVIDIA笔记本显卡驱动", "2018.3.27 391.35");
+                    driver_download_window.Show();
+                }
+                if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 4)
+                {
+                    driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20161214.txt"), "NVIDIA笔记本显卡驱动", "2016.12.14 342.01");
+                    driver_download_window.Show();
+                }
             }
-            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 2)
+            catch (Exception ex)
             {
-                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20190411.txt"), "NVIDIA笔记本显卡驱动", "2019.4.11 425.31");
-                driver_download_window.Show();
-            }
-            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 3)
-            {
-                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20180327.txt"), "NVIDIA笔记本显卡驱动", "2018.3.27 391.35");
-                driver_download_window.Show();
-            }
-            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 4)
-            {
-                driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-20161214.txt"), "NVIDIA笔记本显卡驱动", "2016.12.14 342.01");
-                driver_download_window.Show();
+                ContentDialog nv_notebook_gpu_error = new ContentDialog
+                {
+                    Title = "Error",
+                    Content = "在获取驱动下载链接时出现错误。\n错误信息：\n"+ex+"\n发生这样的错误，极有可能是你宽带拉了，重连网络试试看？",
+                    CloseButtonText = "OK"
+                };
+                ContentDialogResult result = await nv_notebook_gpu_error.ShowAsync();
             }
             if (nv_driver_version.SelectedIndex == 5)
             {
