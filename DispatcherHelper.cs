@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Threading;
 using System.Security.Permissions;
+using System.Windows.Threading;
 
 //  立即退出程序 Environment.Exit(0);
 
@@ -13,11 +13,11 @@ namespace System_Init_Toolbox
         {
             DispatcherFrame frame = new DispatcherFrame();
             Dispatcher.CurrentDispatcher.BeginInvoke(DispatcherPriority.Background, new DispatcherOperationCallback(ExitFrames), frame);
-            try 
-            { 
-                Dispatcher.PushFrame(frame); 
+            try
+            {
+                Dispatcher.PushFrame(frame);
             }
-            catch (InvalidOperationException) 
+            catch (InvalidOperationException)
             {
 
             }

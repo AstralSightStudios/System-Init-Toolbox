@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System;
-using System.Windows;
-using System.Net;
-using System.IO;
 using System.Diagnostics;
-using System.Threading;
+using System.IO;
+using System.Net;
+using System.Windows;
 
 namespace System_Init_Toolbox
 {

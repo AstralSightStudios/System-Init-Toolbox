@@ -1,10 +1,8 @@
-﻿using System;
-using System.Windows;
-using Microsoft.Win32;
-using System.Management;
+﻿using Microsoft.Win32;
 using ModernWpf.Controls;
-using System.Net;
-using System.Diagnostics;
+using System;
+using System.Management;
+using System.Windows;
 
 namespace System_Init_Toolbox
 {
@@ -16,7 +14,7 @@ namespace System_Init_Toolbox
         //获取分区大小函数
         public static long GetHardDiskSpace(string str_HardDiskName)
         {
-            
+
             long totalSize = new long();
             str_HardDiskName = str_HardDiskName + ":\\";
             System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
@@ -53,7 +51,7 @@ namespace System_Init_Toolbox
                 mc = null;
                 return mac.Trim();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "uMnIk";
             }
@@ -62,7 +60,7 @@ namespace System_Init_Toolbox
         //函数与函数之间传递变量的class
         public static class mainwindow_class
         {
-            public static string gpu_installed_display_drivers="";
+            public static string gpu_installed_display_drivers = "";
         }
         public MainWindow()
         {
@@ -72,7 +70,7 @@ namespace System_Init_Toolbox
             Version ver = os.Version;
             //获取电脑名称，没啥用，废案
             string get_conputer_name = System.Environment.GetEnvironmentVariable("ComputerName");
-            if(get_conputer_name != null)
+            if (get_conputer_name != null)
             {
                 //Label_Computer_Name.Content = "电脑名称：" + get_conputer_name;
             }
@@ -83,7 +81,7 @@ namespace System_Init_Toolbox
             //获取内存大小
             ManagementClass cimobject1 = new ManagementClass("Win32_PhysicalMemory");
             ManagementObjectCollection moc1 = cimobject1.GetInstances();
-            double capacity=0;
+            double capacity = 0;
             foreach (ManagementObject mo1 in moc1)
             {
                 capacity += ((Math.Round(Int64.Parse(mo1.Properties["Capacity"].Value.ToString()) / 1024 / 1024 / 1024.0, 1)));
@@ -91,9 +89,9 @@ namespace System_Init_Toolbox
             //获取显卡信息
             ManagementObjectSearcher objvide = new ManagementObjectSearcher("select * from Win32_VideoController");
             //初始化显卡信息全局变量
-            string gpu_name="";
-            string gpu_device_id="";
-            string gpu_adapter_ram="";
+            string gpu_name = "";
+            string gpu_device_id = "";
+            string gpu_adapter_ram = "";
             string gpu_driver_version = "";
             string gpu_video_processor = "";
             string gpu_video_memory_type = "";
@@ -122,7 +120,7 @@ namespace System_Init_Toolbox
             Label_Hardware_RAM.Content = "总内存容量（RAM Size）：" + capacity.ToString() + "GB";
             Label_Hardware_Graphics_card.Content = "图像输出显卡（Graphics Card）：" + gpu_name;
             Label_Hardware_NetworkAdpater_ID.Content = "当前使用的网卡的ID：" + GetNetworkAdpaterID();
-            Label_GPU_Name.Content  = "图像输出显卡名称（GPU）：" + gpu_name;
+            Label_GPU_Name.Content = "图像输出显卡名称（GPU）：" + gpu_name;
             Label_GPU_Device_ID.Content = "图像输出显卡设备ID（GPU Device ID）：" + gpu_device_id;
             double GB_GPU_AP_RAM = double.Parse(gpu_adapter_ram) / (1024 * 1024 * 1024);
             Label_GPU_AP_RAM.Content = "图像输出显卡共享内存（GPU AP RAM）：" + GB_GPU_AP_RAM.ToString() + "GB";
@@ -177,7 +175,7 @@ namespace System_Init_Toolbox
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            driver_download_window driver_download_window = new driver_download_window("tst","test test test test test test test","1145.14");
+            driver_download_window driver_download_window = new driver_download_window("tst", "test test test test test test test", "1145.14");
             driver_download_window.Show();
         }
 
@@ -192,14 +190,15 @@ namespace System_Init_Toolbox
                 CloseButtonText = "OK"
             };
             //debug_nv1.Content = nv_platform.SelectedIndex + "        " + nv_driver_version.SelectedIndex;
-            if (nv_platform.Text == "") {
+            if (nv_platform.Text == "")
+            {
                 ContentDialogResult result = await nv_combobox_null_tips.ShowAsync();
             }
             else if (nv_driver_version.Text == "")
             {
                 ContentDialogResult result = await nv_combobox_null_tips.ShowAsync();
-            }  
-            if(nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 1)
+            }
+            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 1)
             {
                 ContentDialog nv_notebook_gpu_error = new ContentDialog
                 {
@@ -209,7 +208,7 @@ namespace System_Init_Toolbox
                 };
                 ContentDialogResult result = await nv_notebook_gpu_error.ShowAsync();
             }
-            if(nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 0)
+            if (nv_platform.Text == "笔记本" && nv_driver_version.SelectedIndex == 0)
             {
                 driver_download_window driver_download_window = new driver_download_window(await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/nvidia-notebook-lastet.txt"), "NVIDIA笔记本显卡驱动", "最新版本");
                 driver_download_window.Show();
@@ -347,4 +346,4 @@ namespace System_Init_Toolbox
             visualCPP.Show();
         }
     }
-    }
+}

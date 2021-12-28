@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Windows;
-using System.Net;
-using System.IO;
 using System.Diagnostics;
-using System.Threading;
+using System.IO;
+using System.Net;
+using System.Windows;
 
 namespace System_Init_Toolbox
 {
@@ -105,8 +104,8 @@ namespace System_Init_Toolbox
             progressBar1.IsIndeterminate = true;
             //试用Delay，为了让label有时间反应过来切换
             Delay(3000);
-            progressBar1.IsIndeterminate=false;
-            FileStream down_452_fs = new FileStream("netframework452.exe",FileMode.OpenOrCreate);
+            progressBar1.IsIndeterminate = false;
+            FileStream down_452_fs = new FileStream("netframework452.exe", FileMode.OpenOrCreate);
             status_label.Content = "正在下载.NET Framework 4.5.2";
             downloading = true;
             //由于部分用户无法连接download.microsoft.com，因此除使用go.microsoft.com链接外的.net framework将放到gitee release上进行下载。
@@ -117,7 +116,7 @@ namespace System_Init_Toolbox
             down_452_fs.Close();
             status_label.Content = "正在下载.NET Framework 4.6";
             FileStream down_46_fs = new FileStream("netframework46.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/924702/download/NDP46-KB3045557-x86-x64-AllOS-ENU.exe",down_46_fs,progressBar1,label1,this);
+            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/924702/download/NDP46-KB3045557-x86-x64-AllOS-ENU.exe", down_46_fs, progressBar1, label1, this);
             wb.Close();
             down_46_fs.Close();
             status_label.Content = "正在下载.NET Framework 4.6.1";

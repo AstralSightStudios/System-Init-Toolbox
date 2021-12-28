@@ -1,10 +1,9 @@
-﻿using System;
+﻿using ModernWpf.Controls;
+using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
-using ModernWpf.Controls;
-using System.Threading;
-using System.Diagnostics;
 
 namespace System_Init_Toolbox
 {
