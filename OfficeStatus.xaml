@@ -9,9 +9,10 @@
         mc:Ignorable="d"
         Title="System Init Toolbox - Office Deploy Status" Height="300" Width="350" Icon="/appicon.png" ResizeMode="NoResize">
     <Grid Background="#00E5E5E5">
-        <Label Content="正在下载Office..." HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <ProgressBar HorizontalAlignment="Center" Height="0" Margin="0,142,0,0" Width="250" VerticalAlignment="Top" IsIndeterminate="True"/>
-        <Label Content="请坐和放宽，等待下载安装完毕。" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" FontSize="12"/>
+        <Label x:Name="StatusLabel" Content="正在下载Office..." HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <ProgressBar x:Name="pb" HorizontalAlignment="Center" Height="0" Margin="0,142,0,0" Width="250" VerticalAlignment="Top"/>
+        <Label x:Name="tipslabel" Content="请坐和放宽，等待下载安装完毕。" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" FontSize="12" Opacity="0"/>
+        <Button Content="开始部署Office" Margin="0,218,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
 
     </Grid>
 </fw:AcrylicWindow>

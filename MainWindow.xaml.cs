@@ -400,20 +400,54 @@ namespace System_Init_Toolbox
 
         private async void Button_Click_12(object sender, RoutedEventArgs e)
         {
-            ContentDialog eulaDialog = new ContentDialog
+            if (SelectedXMLFileLabel.Content != "")
             {
-                Title = "EULA",
-                Content = "请打开程序根目录的OfficeDeployTool文件夹中的EULA文件（用记事本等软件打开皆可）以阅读EULA再决定是否同意。",
-                PrimaryButtonText = "同意",
-                CloseButtonText = "不同意"
-            };
+                ContentDialog eulaDialog = new ContentDialog
+                {
+                    Title = "EULA",
+                    Content = "请打开程序根目录的OfficeDeployTool文件夹中的EULA文件（用记事本等软件打开皆可）以阅读EULA再决定是否同意。",
+                    PrimaryButtonText = "同意",
+                    CloseButtonText = "不同意"
+                };
 
-            ContentDialogResult result = await eulaDialog.ShowAsync();
+                ContentDialogResult result = await eulaDialog.ShowAsync();
 
-            if (result == ContentDialogResult.Primary)//如果用户点同意
+                if (result == ContentDialogResult.Primary)//如果用户点同意
+                {
+                    OfficeStatus status = new OfficeStatus(SelectedXMLFileLabel_.Content.ToString());
+                    status.Show();
+                }
+            }
+            else
             {
-                OfficeStatus status = new OfficeStatus();
-                status.Show();
+                ContentDialog nullselect = new ContentDialog
+                {
+                    Title = "您没有选择文件",
+                    Content = "您似乎没用选择文件哦~请选择有效的XML配置文件后再部署哦~",
+                    PrimaryButtonText = "OK",
+                };
+                ContentDialogResult result = await nullselect.ShowAsync();
+            }
+        }
+
+        private async void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            openFileDialog.Filter = "compressed files (*.xml)|*.xml";
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                SelectedXMLFileLabel.Content = "您已选择："+openFileDialog.FileName;
+                SelectedXMLFileLabel_.Content = openFileDialog.FileName;
+            }
+            else
+            {
+                ContentDialog nullselect = new ContentDialog
+                {
+                    Title = "您没有选择文件",
+                    Content = "您似乎没用选择文件哦~",
+                    PrimaryButtonText = "OK",
+                };
+                ContentDialogResult result = await nullselect.ShowAsync();
             }
         }
     }

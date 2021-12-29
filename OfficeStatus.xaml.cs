@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace System_Init_Toolbox
 {
@@ -19,9 +8,42 @@ namespace System_Init_Toolbox
     /// </summary>
     public partial class OfficeStatus
     {
-        public OfficeStatus()
+        private string XmlFileName;
+        public static void Delay(int mm)
+        {
+            DateTime current = DateTime.Now;
+            while (current.AddMilliseconds(mm) > DateTime.Now)
+            {
+                System.Windows.Forms.Application.DoEvents();
+            }
+            return;
+        }
+        public OfficeStatus(string XmlFileName)
         {
             InitializeComponent();
+            this.XmlFileName = XmlFileName;
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            tipslabel.Opacity = 100;
+            pb.IsIndeterminate = true;
+            Process down_process = new Process();
+            ProcessStartInfo down_start_info = new ProcessStartInfo("./OfficeDeployTool/setup.exe", "/download " + XmlFileName);
+            down_process.StartInfo = down_start_info;
+            down_process.StartInfo.CreateNoWindow = true;
+            StatusLabel.Content = "正在下载Office...";
+            Delay(3000);
+            down_process.Start();
+            down_process.WaitForExit();
+            Process install_process = new Process();
+            ProcessStartInfo install_start_info = new ProcessStartInfo("./OfficeDeployTool/setup.exe", "/configure " + XmlFileName);
+            StatusLabel.Content = "正在安装Office...";
+            Delay(3000);
+            install_process.StartInfo = install_start_info;
+            install_process.StartInfo.CreateNoWindow = true;
+            install_process.Start();
+            install_process.WaitForExit();
         }
     }
 }
