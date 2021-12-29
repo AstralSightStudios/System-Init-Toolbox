@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:System_Init_Toolbox"
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
-        Title="运行库安装器" Height="300" Width="350" Icon="/appicon.png" FontFamily="Source Han Sans SC">
+        Title="System Init Toolbox - 运行库安装器" Height="300" Width="350" Icon="/appicon.png" FontFamily="Source Han Sans SC" ResizeMode="NoResize">
     <Grid Background="#00E5E5E5">
         <TabControl Background="#00E5E5E5">
             <TabItem Header="一键安装" FontFamily="Source Han Sans SC">

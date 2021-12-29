@@ -3,6 +3,7 @@ using ModernWpf.Controls;
 using System;
 using System.Management;
 using System.Windows;
+using System.IO;
 
 namespace System_Init_Toolbox
 {
@@ -12,7 +13,7 @@ namespace System_Init_Toolbox
     public partial class MainWindow
     {
         //获取分区大小函数
-        public static long GetHardDiskSpace(string str_HardDiskName)
+        public static long GetHardDiskSpace(string str_HardDiskName)//string盘符变量
         {
 
             long totalSize = new long();
@@ -27,7 +28,7 @@ namespace System_Init_Toolbox
             }
             return totalSize;
         }
-        //获取当前使用的网卡MAC地址函数
+        //获取当前使用的网卡ID
         public static string GetNetworkAdpaterID()
         {
             try
@@ -164,6 +165,7 @@ namespace System_Init_Toolbox
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            //开发选项页面 驱动下载链接get
             ContentDialog debug_output_gitee_link_content = new ContentDialog
             {
                 Title = "Debug Message",
@@ -175,6 +177,7 @@ namespace System_Init_Toolbox
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            //开发选项页面 驱动下载窗口test
             driver_download_window driver_download_window = new driver_download_window("tst", "test test test test test test test", "1145.14");
             driver_download_window.Show();
         }
@@ -285,6 +288,7 @@ namespace System_Init_Toolbox
 
         private async void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            //AMD驱动下载按钮 用不了
             //amd的驱动下载简单的多
             //但还是屎山代码😭😭😭
             //而且会卡死
@@ -343,35 +347,41 @@ namespace System_Init_Toolbox
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
+            //.NET Framework安装窗口
             net_framework net_framework = new net_framework();
             net_framework.Show();
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
+            //.NET安装窗口
             dotnet dotnet = new dotnet();
             dotnet.Show();
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e)
         {
+            //VC++安装窗口
             visualCPP visualCPP = new visualCPP();
             visualCPP.Show();
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e)
         {
+            //抓哇安装窗口
             java java = new java();
             java.Show();
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e)
         {
+            //xml生成页面打开
             System.Diagnostics.Process.Start("explorer.exe", "https://config.office.com/deploymentsettings");
         }
 
         private async void Button_Click_11(object sender, RoutedEventArgs e)
         {
+            //默认配置文件按钮dialog
             ContentDialog createFileDialog = new ContentDialog
             {
                 Title = "确定要使用？",
@@ -382,9 +392,28 @@ namespace System_Init_Toolbox
 
             ContentDialogResult result = await createFileDialog.ShowAsync();
 
-            if (result == ContentDialogResult.Primary)
+            if (result == ContentDialogResult.Primary)//如果用户点确定
             {
-                
+                System.IO.File.Copy("OfficeConfigs/ProPlus2021Volume.xml", "ProPlus2021Volume.xml", true);//true=覆盖已存在的同名文件,false则反之
+            }
+        }
+
+        private async void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            ContentDialog eulaDialog = new ContentDialog
+            {
+                Title = "EULA",
+                Content = "请打开程序根目录的OfficeDeployTool文件夹中的EULA文件（用记事本等软件打开皆可）以阅读EULA再决定是否同意。",
+                PrimaryButtonText = "同意",
+                CloseButtonText = "不同意"
+            };
+
+            ContentDialogResult result = await eulaDialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)//如果用户点同意
+            {
+                OfficeStatus status = new OfficeStatus();
+                status.Show();
             }
         }
     }
