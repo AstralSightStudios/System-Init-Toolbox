@@ -364,5 +364,28 @@ namespace System_Init_Toolbox
             java java = new java();
             java.Show();
         }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://config.office.com/deploymentsettings");
+        }
+
+        private async void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            ContentDialog createFileDialog = new ContentDialog
+            {
+                Title = "确定要使用？",
+                Content = "如果您确定，那么程序将会在程序目录下生成一个叫做ProPlus2021Volume.xml的文件，您在部署Office时选择此配置文件即可。\n\n此配置文件包含：\nOffice LTSC 专业增强版 2021 - 批量许可证   最新版本\nWord\nPowerPoint\nExcel\n主要语言：匹配操作系统\n次要语言：English（US）\n次要语言：日语\n自动KMS激活（密钥：FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH）",
+                PrimaryButtonText = "确定",
+                CloseButtonText = "取消"
+            };
+
+            ContentDialogResult result = await createFileDialog.ShowAsync();
+
+            if (result == ContentDialogResult.Primary)
+            {
+                
+            }
+        }
     }
 }

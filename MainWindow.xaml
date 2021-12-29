@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:local="clr-namespace:System_Init_Toolbox"
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
@@ -129,7 +130,26 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Office" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
-                <Grid Background="#00E5E5E5"/>
+                <Grid Background="#00E5E5E5">
+                    <TabControl Background="#00E5E5E5">
+                        <TabItem x:Name="ConfigBuilder_Webbrowser" Header="第一步：制作部署工具XML配置文件">
+                            <Grid Background="#00E5E5E5">
+                                <Label Content="要安装Office，Office部署工具XML配置文件是必须的。" HorizontalAlignment="Left" Margin="220,115,0,0" VerticalAlignment="Top"/>
+                                <Label Content="您可以使用微软官方提供的网站（https://config.office.com/deploymentsettings）来生成它。" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top"/>
+                                <Label Content="您可以在您的默认浏览器中打开此网站。" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top"/>
+                                <Label Content="所有选项选择完毕后，点击导出按钮，格式选择Office Open XML，然后下载即可。" HorizontalAlignment="Left" Margin="176,184,0,0" VerticalAlignment="Top"/>
+                                <Label Content="最后，请点击此页上方的第二步，选择您下载好的xml文件，开始部署（安装）Office。" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top"/>
+                                <Image HorizontalAlignment="Left" Height="100" Margin="344,10,0,0" VerticalAlignment="Top" Width="100" Source="/office_256_regular.png"/>
+                                <Button Content="在系统默认浏览器中打开生成网站" Margin="101,246,0,0" VerticalAlignment="Top" Click="Button_Click_10"/>
+                                <Label Content="或" HorizontalAlignment="Left" Margin="386,252,0,0" VerticalAlignment="Top"/>
+                                <Button Content="使用程序提供的Office2021批量版xml" Margin="445,246,0,0" VerticalAlignment="Top" Click="Button_Click_11"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="第二步：部署Office！">
+                            <Grid Background="#00E5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
             </TabItem>
             <TabItem Header="图形库" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5"/>

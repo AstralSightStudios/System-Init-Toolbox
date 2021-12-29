@@ -27,6 +27,7 @@
     <None Remove="desktop_32_regular.svg" />
     <None Remove="dev_256_regular.png" />
     <None Remove="gpu_256_regular.png" />
+    <None Remove="office_256_regular.png" />
     <None Remove="runtime_256_regular.png" />
     <None Remove="win-logo.png" />
     <None Remove="win11-logo.png" />
@@ -38,6 +39,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentWPF" Version="0.9.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1054.31" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.4.1" />
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22523-preview" />
     <PackageReference Include="Microsoft.Windows.WinMD" Version="1.0.210629.2" />
@@ -60,6 +62,7 @@
     <Resource Include="desktop_256_regular.png" />
     <Resource Include="dev_256_regular.png" />
     <Resource Include="gpu_256_regular.png" />
+    <Resource Include="office_256_regular.png" />
     <Resource Include="runtime_256_regular.png" />
     <Resource Include="win11-logo.png" />
   </ItemGroup>
