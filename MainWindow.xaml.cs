@@ -419,10 +419,14 @@ namespace System_Init_Toolbox
                         Title = "此功能不可用",
                         Content = "目前，此程序的Office部署功能存在很大的问题，因此已停止使用。如果您有信心帮助我们解决此问题，请随时给我们提交Pull Request或在相关主题的issue中提供一些信息。非常感谢！",
                         PrimaryButtonText = "OK",
-                        CloseButtonText = "打开System Init Toolbox Github issues页面"
+                        CloseButtonText = "打开issue页面"
                     };
 
                     ContentDialogResult result_t = await bugDialog.ShowAsync();
+                    if(result_t == ContentDialogResult.None)
+                    {
+                        System.Diagnostics.Process.Start("explorer.exe", "https://github.com/Stargazing-Studio/System-Init-Toolbox/issues/1");
+                    }
                     //OfficeStatus status = new OfficeStatus(SelectedXMLFileLabel_.Content.ToString());
                     //status.Show();
                 }

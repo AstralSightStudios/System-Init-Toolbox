@@ -218,10 +218,9 @@
                     <ui:HyperlinkButton NavigateUri="https://github.com/sourcechord/FluentWPF" Height="33" VerticalAlignment="Top" Content="sourcechord/FluentWPF" Margin="515,221,0,0" FontFamily="Source Han Sans SC"/>
                     <Label Content="[公开测试版本]  BETA 0.1" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
                     <Label Content="Build5" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
-                    <Label Content="此程序UI遵循Microsoft Fluent设计风格" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
                     <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Source Han Sans SC" Height="27"/>
-                    <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="xiaoniu1234/System-init-Toolbox" Margin="324,253,0,0" FontFamily="Source Han Sans SC"/>
-                    <Label Content="欢迎提出issues/pull requests哦！" Margin="564,262,37,0" VerticalAlignment="Top" FontSize="12" FontFamily="Source Han Sans SC" Height="27"/>
+                    <ui:HyperlinkButton NavigateUri="https://github.com/Stargazing-Studio/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="Stargazing-Studio/System-init-Toolbox" Margin="324,253,0,0" FontFamily="Source Han Sans SC"/>
+                    <Label Content="欢迎提出issues/pull requests哦！" Margin="324,286,277,0" VerticalAlignment="Top" FontSize="12" FontFamily="Source Han Sans SC" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/scp-10492" Height="33" VerticalAlignment="Top" Content="@SCP-10492" Margin="464,188.3,0,0" Cursor="Hand" FontSize="12" FontFamily="Source Han Sans SC"/>
                 </Grid>
             </TabItem>
