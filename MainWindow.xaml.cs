@@ -414,8 +414,17 @@ namespace System_Init_Toolbox
 
                 if (result == ContentDialogResult.Primary)//如果用户点同意
                 {
-                    OfficeStatus status = new OfficeStatus(SelectedXMLFileLabel_.Content.ToString());
-                    status.Show();
+                    ContentDialog bugDialog = new ContentDialog
+                    {
+                        Title = "此功能不可用",
+                        Content = "目前，此程序的Office部署功能存在很大的问题，因此已停止使用。如果您有信心帮助我们解决此问题，请随时给我们提交Pull Request或在相关主题的issue中提供一些信息。非常感谢！",
+                        PrimaryButtonText = "OK",
+                        CloseButtonText = "打开System Init Toolbox Github issues页面"
+                    };
+
+                    ContentDialogResult result_t = await bugDialog.ShowAsync();
+                    //OfficeStatus status = new OfficeStatus(SelectedXMLFileLabel_.Content.ToString());
+                    //status.Show();
                 }
             }
             else
@@ -461,6 +470,71 @@ namespace System_Init_Toolbox
         {
             webbrowser webbrowser = new webbrowser("https://www.paypal.com/paypalme/mcmacheng");
             webbrowser.Show();
+        }
+
+        private void Button_Click_16(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://store.steampowered.com/about/");
+        }
+
+        private void Button_Click_17(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.epicgames.com/store/zh-CN/");
+        }
+
+        private void Button_Click_18(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.origin.com/hkg/zh-tw/store/download");
+        }
+
+        private void Button_Click_19(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://ubisoftconnect.com/");
+        }
+
+        private void Button_Click_20(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.mozilla.org/zh-CN/firefox/new/");
+        }
+
+        private void Button_Click_21(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.microsoft.com/zh-cn/edge?r=1");
+        }
+
+        private void Button_Click_22(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.google.cn/chrome/");
+        }
+
+        private void Button_Click_23(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://github.com/xiaoniu1234/StarVPN/releases");
+        }
+
+        private void Button_Click_24(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.jiayouyabeijing.com/cn/");
+        }
+
+        private void Button_Click_25(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://visualstudio.microsoft.com/");
+        }
+
+        private void Button_Click_26(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://code.visualstudio.com/");
+        }
+
+        private void Button_Click_27(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://python.org/");
+        }
+
+        private void Button_Click_28(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://www.embarcadero.com/cn/free-tools/dev-cpp");
         }
     }
 }

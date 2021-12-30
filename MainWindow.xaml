@@ -163,24 +163,44 @@
                 <Grid Background="#00E5E5E5">
                     <TabControl Background="#00E5E5E5">
                         <TabItem Header="游戏平台">
-                            <Grid Background="#00E5E5E5"/>
+                            <Grid Background="#00E5E5E5">
+                                <Button Content="Steam" HorizontalAlignment="Center" Click="Button_Click_16" Margin="0,142,0,0" VerticalAlignment="Top"/>
+                                <Button Content="Epic Games" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Click="Button_Click_17"/>
+                                <Button Content="Origin" HorizontalAlignment="Center" Margin="0,214,0,0" VerticalAlignment="Top" Click="Button_Click_18"/>
+                                <Button Content="Ubisoft Connect" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Click="Button_Click_19"/>
+                                <Image HorizontalAlignment="Left" Height="137" Margin="332,10,0,0" VerticalAlignment="Top" Width="154" Source="/games_256_regular.png"/>
+                            </Grid>
                         </TabItem>
                         <TabItem Header="浏览器">
-                            <Grid Background="#00E5E5E5"/>
+                            <Grid Background="#00E5E5E5">
+                                <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/browser_plant_256_regular.png"/>
+                                <Button Content="Google Chrome" Margin="0,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_22"/>
+                                <Button Content="Microsoft Edge（Chrome内核）" Margin="0,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_21"/>
+                                <Button Content="Firefox（国际版）" Margin="0,234,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_20"/>
+                            </Grid>
                         </TabItem>
                         <TabItem Header="程序猿必备">
-                            <Grid Background="#00E5E5E5"/>
+                            <Grid Background="#00E5E5E5">
+                                <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/code_256_regular.png"/>
+                                <Button Content="Visual Studio - 宇宙第一IDE" Margin="0,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_25"/>
+                                <Button Content="Visual Studio Code - 轻便好用" Margin="0,178,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_26"/>
+                                <Button Content="Python - 超！级！简！单！" Margin="0,214,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_27"/>
+                                <Button Content="Dev C++ - 初学者必备" Margin="0,250,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_28"/>
+                            </Grid>
                         </TabItem>
-                        <TabItem Header="社交软件">
-                            <Grid Background="#00E5E5E5"/>
+                        <TabItem Header="VPN">
+                            <Grid Background="#00E5E5E5">
+                                <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/vpn_256_regular.png"/>
+                                <Button Content="StarVPN - 勉强能用" HorizontalAlignment="Center" Click="Button_Click_23"/>
+                                <Button Content="佛跳墙 - 美味菜肴" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Click="Button_Click_24"/>
+                            </Grid>
                         </TabItem>
                     </TabControl>
                 </Grid>
             </TabItem>
             <TabItem Header="设置" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
-                    <Label Content="软件安装程序结束后自动删除安装包：" HorizontalAlignment="Left" Margin="22,19,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ui:ToggleSwitch x:Name="Apps_RemoveExeFile" IsOn="True" Width="77" Margin="22,47,0,0" VerticalAlignment="Top"></ui:ToggleSwitch>
+                    <Label Content="暂无设置" HorizontalAlignment="Center" Margin="0,163,0,0" VerticalAlignment="Top" FontSize="16"/>
                 </Grid>
             </TabItem>
             <TabItem Header="关于" FontFamily="Source Han Sans SC">
@@ -196,7 +216,7 @@
                     <Label Content="程序所使用到的主题：" Margin="134,224,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Source Han Sans SC" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/Kinnara/ModernWpf" Height="33" VerticalAlignment="Top" Content="Kinnara/ModernWPF" Margin="324,221,0,0" FontFamily="Source Han Sans SC"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/sourcechord/FluentWPF" Height="33" VerticalAlignment="Top" Content="sourcechord/FluentWPF" Margin="515,221,0,0" FontFamily="Source Han Sans SC"/>
-                    <Label Content="[公开测试版本]  BETA 1.0" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
+                    <Label Content="[公开测试版本]  BETA 0.1" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
                     <Label Content="Build5" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
                     <Label Content="此程序UI遵循Microsoft Fluent设计风格" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" FontSize="12"/>
                     <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Source Han Sans SC" Height="27"/>

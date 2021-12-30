@@ -22,14 +22,18 @@
   <ItemGroup>
     <None Remove="appicon.png" />
     <None Remove="baseboard_256_regular.png" />
+    <None Remove="browser_plant_256_regular.png" />
+    <None Remove="code_256_regular.png" />
     <None Remove="desktop_256_regular.png" />
     <None Remove="desktop_32_regular.png" />
     <None Remove="desktop_32_regular.svg" />
     <None Remove="dev_256_regular.png" />
     <None Remove="dpy_office_256_regular.png" />
+    <None Remove="games_256_regular.png" />
     <None Remove="gpu_256_regular.png" />
     <None Remove="office_256_regular.png" />
     <None Remove="runtime_256_regular.png" />
+    <None Remove="vpn_256_regular.png" />
     <None Remove="win-logo.png" />
     <None Remove="win11-logo.png" />
   </ItemGroup>
@@ -60,12 +64,16 @@
       <PackagePath>\</PackagePath>
     </Resource>
     <Resource Include="baseboard_256_regular.png" />
+    <Resource Include="browser_plant_256_regular.png" />
+    <Resource Include="code_256_regular.png" />
     <Resource Include="desktop_256_regular.png" />
     <Resource Include="dev_256_regular.png" />
     <Resource Include="dpy_office_256_regular.png" />
+    <Resource Include="games_256_regular.png" />
     <Resource Include="gpu_256_regular.png" />
     <Resource Include="office_256_regular.png" />
     <Resource Include="runtime_256_regular.png" />
+    <Resource Include="vpn_256_regular.png" />
     <Resource Include="win11-logo.png" />
   </ItemGroup>
 
