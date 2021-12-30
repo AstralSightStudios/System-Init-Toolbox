@@ -450,5 +450,17 @@ namespace System_Init_Toolbox
                 ContentDialogResult result = await nullselect.ShowAsync();
             }
         }
+
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            webbrowser webbrowser = new webbrowser("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/donate/sg_skm.jpg");
+            webbrowser.Show();
+        }
+
+        private void Button_Click_15(object sender, RoutedEventArgs e)
+        {
+            webbrowser webbrowser = new webbrowser("https://www.paypal.com/paypalme/mcmacheng");
+            webbrowser.Show();
+        }
     }
 }

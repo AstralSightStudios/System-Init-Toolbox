@@ -159,14 +159,28 @@
                     </TabControl>
                 </Grid>
             </TabItem>
-            <TabItem Header="游戏平台" FontFamily="Source Han Sans SC">
+            <TabItem Header="软件" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
-                    <Label Content="Coming Soon" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top"/>
+                    <TabControl Background="#00E5E5E5">
+                        <TabItem Header="游戏平台">
+                            <Grid Background="#00E5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="浏览器">
+                            <Grid Background="#00E5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="程序猿必备">
+                            <Grid Background="#00E5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="社交软件">
+                            <Grid Background="#00E5E5E5"/>
+                        </TabItem>
+                    </TabControl>
                 </Grid>
             </TabItem>
             <TabItem Header="设置" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
-                    <Label Content="暂无可用设置" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label Content="软件安装程序结束后自动删除安装包：" HorizontalAlignment="Left" Margin="22,19,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <ui:ToggleSwitch x:Name="Apps_RemoveExeFile" IsOn="True" Width="77" Margin="22,47,0,0" VerticalAlignment="Top"></ui:ToggleSwitch>
                 </Grid>
             </TabItem>
             <TabItem Header="关于" FontFamily="Source Han Sans SC">
@@ -189,6 +203,14 @@
                     <ui:HyperlinkButton NavigateUri="https://github.com/xiaoniu1234/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="xiaoniu1234/System-init-Toolbox" Margin="324,253,0,0" FontFamily="Source Han Sans SC"/>
                     <Label Content="欢迎提出issues/pull requests哦！" Margin="564,262,37,0" VerticalAlignment="Top" FontSize="12" FontFamily="Source Han Sans SC" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/scp-10492" Height="33" VerticalAlignment="Top" Content="@SCP-10492" Margin="464,188.3,0,0" Cursor="Hand" FontSize="12" FontFamily="Source Han Sans SC"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="捐助" FontFamily="Source Han Sans SC">
+                <Grid Background="#00E5E5E5">
+                    <Label Content="若您觉得这款软件还不错，烦请捐助一下~" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="捐助不是最重要的，只要大家觉得这款软件好用，就是我们前进的最大动力！" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" FontSize="10"/>
+                    <Button Content="微信支付" Margin="230,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_14"/>
+                    <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15"/>
                 </Grid>
             </TabItem>
             <TabItem Header="开发选项" FontFamily="Source Han Sans SC" IsEnabled="False" Opacity="0">
