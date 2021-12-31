@@ -414,6 +414,7 @@ namespace System_Init_Toolbox
 
                 if (result == ContentDialogResult.Primary)//如果用户点同意
                 {
+                    /*
                     ContentDialog bugDialog = new ContentDialog
                     {
                         Title = "此功能不可用",
@@ -426,9 +427,9 @@ namespace System_Init_Toolbox
                     if(result_t == ContentDialogResult.None)
                     {
                         System.Diagnostics.Process.Start("explorer.exe", "https://github.com/Stargazing-Studio/System-Init-Toolbox/issues/1");
-                    }
-                    //OfficeStatus status = new OfficeStatus(SelectedXMLFileLabel_.Content.ToString());
-                    //status.Show();
+                    */
+                    OfficeStatus status = new OfficeStatus(SelectedXMLFileLabel_.Content.ToString());
+                    status.Show();
                 }
             }
             else

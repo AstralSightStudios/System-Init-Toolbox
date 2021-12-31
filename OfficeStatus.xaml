@@ -12,7 +12,9 @@
         <Label x:Name="StatusLabel" Content="正在下载Office..." HorizontalAlignment="Center" Margin="0,68,0,0" VerticalAlignment="Top" FontSize="20"/>
         <ProgressBar x:Name="pb" HorizontalAlignment="Center" Height="0" Margin="0,142,0,0" Width="250" VerticalAlignment="Top"/>
         <Label x:Name="tipslabel" Content="请坐和放宽，等待下载安装完毕。" HorizontalAlignment="Center" Margin="0,151,0,0" VerticalAlignment="Top" FontSize="12" Opacity="0"/>
-        <Button Content="开始部署Office" Margin="0,218,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
+        <Button x:Name="dpy_button" Content="开始部署Office" Margin="0,218,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
+        <Label x:Name="tipslabel_2" Content="下载与安装过程中程序假死、未响应皆为正常现象。" HorizontalAlignment="Center" Margin="0,171,0,0" VerticalAlignment="Top" FontSize="12" Opacity="0"/>
+        <Label x:Name="tipslabel_3" Content="您可通过任务管理器来监视部署工具情况。除非部署工具关闭，否则如果安装错误将会自动弹出含错误信息的窗口。" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top" FontSize="6" Opacity="0"/>
 
     </Grid>
 </fw:AcrylicWindow>

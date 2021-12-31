@@ -27,9 +27,12 @@ namespace System_Init_Toolbox
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             tipslabel.Opacity = 100;
+            tipslabel_2.Opacity = 100;
+            tipslabel_3.Opacity = 100;
+            dpy_button.IsEnabled = false;
             pb.IsIndeterminate = true;
             Process down_process = new Process();
-            ProcessStartInfo down_start_info = new ProcessStartInfo("./OfficeDeployTool/setup.exe", "/download " + XmlFileName);
+            ProcessStartInfo down_start_info = new ProcessStartInfo("./OfficeDeployTool/setup.exe", "/download " + "\"" + XmlFileName + "\"");
             down_process.StartInfo = down_start_info;
             down_process.StartInfo.CreateNoWindow = true;
             StatusLabel.Content = "正在下载Office...";
@@ -44,6 +47,9 @@ namespace System_Init_Toolbox
             install_process.StartInfo.CreateNoWindow = true;
             install_process.Start();
             install_process.WaitForExit();
+            StatusLabel.Content = "Office安装完毕！";
+            pb.IsIndeterminate = false;
+            pb.Value = 100;
         }
     }
 }
