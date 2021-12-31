@@ -40,7 +40,7 @@ namespace System_Init_Toolbox
             down_process.Start();
             down_process.WaitForExit();
             Process install_process = new Process();
-            ProcessStartInfo install_start_info = new ProcessStartInfo("./OfficeDeployTool/setup.exe", "/configure " + XmlFileName);
+            ProcessStartInfo install_start_info = new ProcessStartInfo("./OfficeDeployTool/setup.exe", "/configure " + "\""+XmlFileName + "\"");
             StatusLabel.Content = "正在安装Office...";
             Delay(3000);
             install_process.StartInfo = install_start_info;
