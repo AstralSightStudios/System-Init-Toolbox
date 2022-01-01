@@ -103,9 +103,6 @@ namespace System_Init_Toolbox
             if(java8_checkbox.IsChecked == true)
             {
                 downloading = true;
-                status_label.Content = "正在下载Java 8";
-                FileStream j8 = new FileStream("java8.exe", FileMode.OpenOrCreate);
-                DownloadFile("https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935",j8,progressBar1,label1,this);
                 status_label.Content = "正在安装Java 8";
                 Delay(3000);
                 progressBar1.IsIndeterminate = true;
@@ -120,9 +117,6 @@ namespace System_Init_Toolbox
             if(jdk17_checkbox.IsChecked == true)
             {
                 downloading = true;
-                status_label.Content = "正在下载JDK 17";
-                FileStream j17 = new FileStream("jdk17.exe", FileMode.OpenOrCreate);
-                DownloadFile("https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe", j17, progressBar1, label1, this);
                 status_label.Content = "正在安装JDK 17";
                 Delay(3000);
                 progressBar1.IsIndeterminate = true;

@@ -101,22 +101,6 @@ namespace System_Init_Toolbox
         {
             down_and_install_button.IsEnabled = false;
             downloading = true;
-            FileStream down_31_fs = new FileStream("netcore31.exe", FileMode.OpenOrCreate);
-            status_label.Content = "正在下载.NET Core 3.1";
-            DownloadFile("https://download.visualstudio.microsoft.com/download/pr/1c14e24b-7f31-42dc-ba3c-83295a2d6f7e/41b93591162dfe556cc160ae44fbe75e/windowsdesktop-runtime-3.1.22-win-x64.exe", down_31_fs, progressBar1, label1, this);
-            wb.Close();
-            down_31_fs.Close();
-            status_label.Content = "正在下载.NET 5.0";
-            FileStream down_50_fs = new FileStream("net50.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://download.visualstudio.microsoft.com/download/pr/2bfb80f2-b8f2-44b0-90c1-d3c8c1c8eac8/409dd3d3367feeeda048f4ff34b32e82/windowsdesktop-runtime-5.0.13-win-x64.exe", down_50_fs, progressBar1, label1, this);
-            wb.Close();
-            down_50_fs.Close();
-            status_label.Content = "正在下载.NET 6.0";
-            FileStream down_60_fs = new FileStream("net60.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://download.visualstudio.microsoft.com/download/pr/df4372ca-82c8-4bfa-acf9-c49e27279e7e/6bddefd26964017ff520dc1443029e04/dotnet-runtime-6.0.1-win-x64.exe", down_60_fs, progressBar1, label1, this);
-            wb.Close();
-            down_60_fs.Close();
-            down_and_install_button.IsEnabled = false;
             progressBar1.IsIndeterminate = true;
             status_label.Content = "正在安装.NET Core 3.1";
             Delay(3000);

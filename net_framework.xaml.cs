@@ -103,11 +103,12 @@ namespace System_Init_Toolbox
             progressBar1.IsIndeterminate = true;
             status_label.Content = "正在安装.NET Framework 3.5";
             Delay(3000);
-            Process bat35_Process = new Process();
-            bat35_Process.StartInfo.FileName = "./BATFiles/dotnet-framework-3.5-on.bat";
-            bat35_Process.StartInfo.CreateNoWindow = true;
-            bat35_Process.Start();
-            bat35_Process.WaitForExit();
+            Process dotnet35_Process = new Process();
+            ProcessStartInfo startInfo_35 = new ProcessStartInfo("./dotnetfx35.exe");
+            dotnet35_Process.StartInfo = startInfo_35;
+            dotnet35_Process.StartInfo.CreateNoWindow = ToggleSwitch_NoWindowInstall.IsOn;
+            dotnet35_Process.Start();
+            dotnet35_Process.WaitForExit();
             status_label.Content = "正在安装.NET Framework 4.5.2";
             Delay(3000);
             progressBar1.IsIndeterminate = true;
