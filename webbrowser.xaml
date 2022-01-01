@@ -8,8 +8,6 @@
         mc:Ignorable="d"
         Title="System Init Toolbox - 内置浏览器" Height="400" Width="600" ResizeMode="CanMinimize" Icon="/appicon.png">
     <Grid>
-
         <Wpf:WebView2 x:Name="webview_control" HorizontalAlignment="Center" Height="385" VerticalAlignment="Center" Width="600"/>
-
     </Grid>
 </Window>
