@@ -58,3 +58,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 C:/Users/Administrator/Documents/System[[:space:]]Init[[:space:]]Toolbox/netframework48.exe filter=lfs diff=lfs merge=lfs -text
+netframework48.exe filter=lfs diff=lfs merge=lfs -text
