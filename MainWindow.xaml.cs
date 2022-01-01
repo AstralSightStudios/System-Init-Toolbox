@@ -400,7 +400,7 @@ namespace System_Init_Toolbox
 
         private async void Button_Click_12(object sender, RoutedEventArgs e)
         {
-            if (SelectedXMLFileLabel.Content != "")
+            if (true)
             {
                 ContentDialog eulaDialog = new ContentDialog
                 {
@@ -449,8 +449,8 @@ namespace System_Init_Toolbox
             openFileDialog.Filter = "compressed files (*.xml)|*.xml";
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                SelectedXMLFileLabel.Content = "您已选择："+openFileDialog.FileName;
-                SelectedXMLFileLabel_.Content = openFileDialog.FileName;
+                //SelectedXMLFileLabel.Content = "您已选择："+openFileDialog.FileName;
+                //SelectedXMLFileLabel_.Content = openFileDialog.FileName;
             }
             else
             {

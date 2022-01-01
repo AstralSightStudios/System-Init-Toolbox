@@ -36,6 +36,7 @@
     <None Remove="vpn_256_regular.png" />
     <None Remove="win-logo.png" />
     <None Remove="win11-logo.png" />
+    <None Remove="windows_256_regular.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,6 +76,7 @@
     <Resource Include="runtime_256_regular.png" />
     <Resource Include="vpn_256_regular.png" />
     <Resource Include="win11-logo.png" />
+    <Resource Include="windows_256_regular.png" />
   </ItemGroup>
 
 </Project>
