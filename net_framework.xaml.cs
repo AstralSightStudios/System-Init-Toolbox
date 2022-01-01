@@ -100,56 +100,6 @@ namespace System_Init_Toolbox
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             down_and_install_button.IsEnabled = false;
-            status_label.Content = "等待下载...";
-            progressBar1.IsIndeterminate = true;
-            //试用Delay，为了让label有时间反应过来切换
-            Delay(3000);
-            progressBar1.IsIndeterminate = false;
-            FileStream down_452_fs = new FileStream("netframework452.exe", FileMode.OpenOrCreate);
-            status_label.Content = "正在下载.NET Framework 4.5.2";
-            downloading = true;
-            //由于部分用户无法连接download.microsoft.com，因此除使用go.microsoft.com链接外的.net framework将放到gitee release上进行下载。
-            //别告诉我你连gitee都连不上
-            //连gitee都连不上的宽带...emmm...不如叫窄带如何？
-            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/924577/download/netframework452.exe", down_452_fs, progressBar1, label1, this);
-            wb.Close();
-            down_452_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.6";
-            FileStream down_46_fs = new FileStream("netframework46.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/924702/download/NDP46-KB3045557-x86-x64-AllOS-ENU.exe", down_46_fs, progressBar1, label1, this);
-            wb.Close();
-            down_46_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.6.1";
-            FileStream down_461_fs = new FileStream("netframework461.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/925003/download/NDP461-KB3102436-x86-x64-AllOS-ENU.exe", down_461_fs, progressBar1, label1, this);
-            wb.Close();
-            down_461_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.6.2";
-            FileStream down_462_fs = new FileStream("netframework462.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://go.microsoft.com/fwlink/?linkid=2099468", down_462_fs, progressBar1, label1, this);
-            wb.Close();
-            down_462_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.7";
-            FileStream down_47_fs = new FileStream("netframework47.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://go.microsoft.com/fwlink/?LinkId=2099385", down_47_fs, progressBar1, label1, this);
-            wb.Close();
-            down_47_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.7.1";
-            FileStream down_471_fs = new FileStream("netframework471.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://go.microsoft.com/fwlink/?LinkID=2099383", down_471_fs, progressBar1, label1, this);
-            wb.Close();
-            down_471_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.7.2";
-            FileStream down_472_fs = new FileStream("netframework472.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://go.microsoft.com/fwlink/?LinkID=863265", down_472_fs, progressBar1, label1, this);
-            wb.Close();
-            down_472_fs.Close();
-            status_label.Content = "正在下载.NET Framework 4.8";
-            FileStream down_48_fs = new FileStream("netframework48.exe", FileMode.OpenOrCreate);
-            DownloadFile("https://go.microsoft.com/fwlink/?linkid=2088631", down_48_fs, progressBar1, label1, this);
-            wb.Close();
-            down_48_fs.Close();
-            down_and_install_button.IsEnabled = false;
             progressBar1.IsIndeterminate = true;
             status_label.Content = "正在安装.NET Framework 3.5";
             Delay(3000);
