@@ -24,7 +24,7 @@
             <TabItem Header="设置" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <Label Content="安装完成后自动清理残留：" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" FontSize="16"/>
-                    <ui:ToggleSwitch x:Name="ToggleSwitch_AfterInstallRemove_exe" Width="76" Margin="24,38,0,0" VerticalAlignment="Top" OffContent="否" OnContent="是" IsOn="True" FontFamily="Source Han Sans SC"/>
+                    <ui:ToggleSwitch x:Name="ToggleSwitch_AfterInstallRemove_exe" Width="76" Margin="24,38,0,0" VerticalAlignment="Top" OffContent="否" OnContent="是" IsOn="False" FontFamily="Source Han Sans SC" IsEnabled="False"/>
                 </Grid>
             </TabItem>
         </TabControl>
