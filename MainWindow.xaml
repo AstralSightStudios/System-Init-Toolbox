@@ -60,7 +60,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="显卡驱动" FontFamily="Source Han Sans SC">
+            <TabItem Header="显卡驱动" FontFamily="Source Han Sans SC" IsEnabled="False">
                 <Grid Background="#00E5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="31*"/>
@@ -130,13 +130,13 @@
                     <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="/runtime_256_regular.png" Margin="0,10,0,0"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Office" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
+            <TabItem Header="Office" Background="#00E5E5E5" FontFamily="Source Han Sans SC" IsEnabled="False">
                 <Grid Background="#00E5E5E5">
                     <Label Content="离线版本中无法使用Office功能" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="软件" FontFamily="Source Han Sans SC">
+            <TabItem Header="软件" FontFamily="Source Han Sans SC" IsEnabled="False">
                 <Grid Background="#00E5E5E5">
                     <TabControl Background="#00E5E5E5">
                         <TabItem Header="游戏平台">
@@ -201,7 +201,7 @@
                     <ui:HyperlinkButton NavigateUri="https://github.com/scp-10492" Height="33" VerticalAlignment="Top" Content="@SCP-10492" Margin="464,188.3,0,0" Cursor="Hand" FontSize="12" FontFamily="Source Han Sans SC"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="捐助" FontFamily="Source Han Sans SC">
+            <TabItem Header="捐助" FontFamily="Source Han Sans SC" IsEnabled="False">
                 <Grid Background="#00E5E5E5">
                     <Label Content="若您觉得这款软件还不错，烦请捐助一下~" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" FontSize="20"/>
                     <Label Content="捐助不是最重要的，只要大家觉得这款软件好用，就是我们前进的最大动力！" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" FontSize="10"/>

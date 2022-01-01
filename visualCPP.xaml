@@ -12,7 +12,7 @@
         <TabControl Background="#00E5E5E5">
             <TabItem Header="一键安装" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
-                    <Button x:Name="down_and_install_button" Content="安装" Margin="0,180,0,0" VerticalAlignment="Top" Width="160" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click"/>
+                    <Button x:Name="down_and_install_button" Content="离线安装" Margin="0,180,0,0" VerticalAlignment="Top" Width="160" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click"/>
                     <ProgressBar x:Name="progressBar1" HorizontalAlignment="Center" Height="4" Margin="0,102,0,0" VerticalAlignment="Top" Width="250"/>
                     <Label x:Name="status_label" Content=" " HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="271"/>
                     <Label Content="Microsoft Visual C++全套运行库" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" Width="330"/>
