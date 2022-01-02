@@ -8,9 +8,9 @@ using System.Windows;
 namespace System_Init_Toolbox
 {
     /// <summary>
-    /// driver_download_window.xaml 的交互逻辑
+    /// app_download_window.xaml 的交互逻辑
     /// </summary>
-    public partial class driver_download_window
+    public partial class app_download_window
     {
         private bool downloading = false;
         private HttpWebRequest request;
@@ -18,12 +18,12 @@ namespace System_Init_Toolbox
         private Stream wb;
         private string global_uri = "";
         System.Windows.Forms.SaveFileDialog dialog;
-        public driver_download_window(string uri, string name = "Driver Name", string version = "Driver Version")
+        public app_download_window(string uri, string name = "App Name", string version = "App Version")
         {
             InitializeComponent();
             this.global_uri = uri;
-            DriverNameLabel.Content = name;
-            DriverVersionLabel.Content = version;
+            AppNameLabel.Content = name;
+            AppVersionLabel.Content = version;
         }
         public void _download_window_closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -82,22 +82,22 @@ namespace System_Init_Toolbox
             }
             return result;
         }
-        public static bool DownloadFile(string URL, FileStream fs, System.Windows.Controls.ProgressBar progressBar1, System.Windows.Controls.Label label1, driver_download_window driver_download_window)
+        public static bool DownloadFile(string URL, FileStream fs, System.Windows.Controls.ProgressBar progressBar1, System.Windows.Controls.Label label1, app_download_window app_download_window)
         {
             try
             {
                 WebHeaderCollection wb_nb = new WebHeaderCollection();
                 wb_nb.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36 Edg/96.0.1054.62");
-                driver_download_window.request = (HttpWebRequest)WebRequest.Create(URL);
-                driver_download_window.request.Headers = wb_nb;
-                driver_download_window.response = (HttpWebResponse)driver_download_window.request.GetResponse();
-                long totalLength = driver_download_window.response.ContentLength;
+                app_download_window.request = (HttpWebRequest)WebRequest.Create(URL);
+                app_download_window.request.Headers = wb_nb;
+                app_download_window.response = (HttpWebResponse)app_download_window.request.GetResponse();
+                long totalLength = app_download_window.response.ContentLength;
                 progressBar1.Maximum = (int)totalLength;
-                driver_download_window.wb = driver_download_window.response.GetResponseStream();
+                app_download_window.wb = app_download_window.response.GetResponseStream();
                 //把stream wb改为全局变量 方便进行.close操作
                 long currentLength = 0;
                 byte[] by = new byte[1024];
-                int osize = driver_download_window.wb.Read(by, 0, by.Length);
+                int osize = app_download_window.wb.Read(by, 0, by.Length);
                 while (osize > 0)
                 {
                     DispatcherHelper.DoEvents();
@@ -105,10 +105,10 @@ namespace System_Init_Toolbox
                     fs.Write(by, 0, osize);
                     progressBar1.Value = (int)currentLength;
                     label1.Content = string.Format("{0} / {1}", BytesToString(currentLength), BytesToString(totalLength));
-                    osize = driver_download_window.wb.Read(by, 0, by.Length);
+                    osize = app_download_window.wb.Read(by, 0, by.Length);
                 }
                 fs.Close();
-                driver_download_window.wb.Close();
+                app_download_window.wb.Close();
                 return (currentLength == totalLength);
             }
             catch (Exception exception)

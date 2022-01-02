@@ -192,7 +192,7 @@
                             <Grid Background="#00E5E5E5">
                                 <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/vpn_256_regular.png"/>
                                 <Button Content="StarVPN - 勉强能用" HorizontalAlignment="Center" Click="Button_Click_23"/>
-                                <Button Content="佛跳墙 - 美味菜肴" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Click="Button_Click_24"/>
+                                <Button Content="极光加速器（原佛跳墙） - 非常推荐" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Click="Button_Click_24"/>
                             </Grid>
                         </TabItem>
                     </TabControl>

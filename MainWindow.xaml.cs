@@ -517,37 +517,44 @@ namespace System_Init_Toolbox
 
         private void Button_Click_16(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://store.steampowered.com/about/");
+            app_download_window app_download_window = new app_download_window("https://media.st.dl.pinyuncloud.com/client/installer/SteamSetup.exe", "Steam", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_17(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.epicgames.com/store/zh-CN/");
+            app_download_window app_download_window = new app_download_window("https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi", "EpicGames", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_18(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.origin.com/hkg/zh-tw/store/download");
+            app_download_window app_download_window = new app_download_window("https://www.dm.origin.com/download", "Origin", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_19(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://ubisoftconnect.com/");
+            app_download_window app_download_window = new app_download_window("https://ubi.li/4vxt9", "Ubisoft Connect （由于育碧服务器很拉所以下载可能会很慢）", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_20(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.mozilla.org/zh-CN/firefox/new/");
+            app_download_window app_download_window = new app_download_window("https://download.mozilla.org/?product=firefox-latest&os=win64&lang=zh-CN", "Firefox（国际版）", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_21(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.microsoft.com/zh-cn/edge?r=1");
+            app_download_window app_download_window = new app_download_window("https://go.microsoft.com/fwlink/?linkid=2108834&Channel=Stable&language=zh-cn", "Microsoft Edge（Chrome内核）", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_22(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.google.cn/chrome/");
+            app_download_window app_download_window = new app_download_window("https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B7FCA3ED6-C600-7C1A-5A93-773CC9C481B5%7D%26lang%3Dzh-CN%26browser%3D4%26usagestats%3D1%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1%26installdataindex%3Dempty/update2/installers/ChromeSetup.exe", "Google Chrome", "最新版本");
+            app_download_window.Show();
         }
 
         private void Button_Click_23(object sender, RoutedEventArgs e)
@@ -562,17 +569,20 @@ namespace System_Init_Toolbox
 
         private void Button_Click_25(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://visualstudio.microsoft.com/");
+            app_download_window app_download_window = new app_download_window("https://aka.ms/vs/17/release/vs_community.exe", "Visual Studio Installer", "2022 Release 17.x");
+            app_download_window.Show();
         }
 
         private void Button_Click_26(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://code.visualstudio.com/");
+            app_download_window app_download_window = new app_download_window("https://vscode.cdn.azure.cn/stable/899d46d82c4c95423fb7e10e68eba52050e30ba3/VSCodeUserSetup-x64-1.63.2.exe", "Visual Studio Code", "Stable Build x64 1.63.2");
+            app_download_window.Show();
         }
 
         private void Button_Click_27(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://python.org/");
+            app_download_window app_download_window = new app_download_window("https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe", "Python", "3.10.1");
+            app_download_window.Show();
         }
 
         private void Button_Click_28(object sender, RoutedEventArgs e)

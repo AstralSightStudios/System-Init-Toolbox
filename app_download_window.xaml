@@ -1,0 +1,34 @@
+﻿<fw:AcrylicWindow x:Class="System_Init_Toolbox.app_download_window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:System_Init_Toolbox"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        Title="System Init Toolbox - 应用程序安装器" Height="270" Width="400" Icon="/appicon.png" FontFamily="Source Han Sans SC" ResizeMode="NoResize">
+    <Grid Background="#00E5E5E5">
+        <TabControl Background="#00E5E5E5">
+            <TabItem Header="一键安装" FontFamily="Source Han Sans SC">
+                <Grid Background="#00E5E5E5">
+                    <Label x:Name="AppNameLabel" Content="App Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="AppVersionLabel" Content="App Version" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" FontSize="12"/>
+                    <ProgressBar x:Name="progressBar1" HorizontalAlignment="Center" Height="0" Width="234" LargeChange="0" Orientation="Horizontal"/>
+                    <Button x:Name="downbutton" Content="立即下载" Margin="305,10,0,0" VerticalAlignment="Top" Height="34" Width="85" FontSize="14" Click="Button_Click" FontFamily="Source Han Sans SC"/>
+                    <Button x:Name="run_setup_bt" Content="运行安装程序" Margin="0,147,0,0" VerticalAlignment="Top" Width="96" FontSize="12" IsEnabled="False" HorizontalAlignment="Center" Click="Button_Click_1" FontFamily="Source Han Sans SC"/>
+                    <Label x:Name="label1" Content="N/A" HorizontalAlignment="Left" Margin="83,124,0,0" VerticalAlignment="Top" FontSize="11"/>
+                    <Label x:Name="dbg_label" Content=" " HorizontalAlignment="Center" Margin="0,180,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="设置" FontFamily="Source Han Sans SC">
+                <Grid Background="#00E5E5E5">
+                    <Label Content="静默安装（仅用于设置是否弹出cmd窗口）：" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" FontSize="16" Opacity="0"/>
+                    <ui:ToggleSwitch x:Name="ToggleSwitch_NoWindowInstall" Width="77" Margin="24,45,0,0" VerticalAlignment="Top" OffContent="关" OnContent="开" IsOn="False" FontFamily="Source Han Sans SC" Opacity="0" IsEnabled="False"/>
+                    <Label Content="安装完成后自动清理残留：" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <ui:ToggleSwitch x:Name="ToggleSwitch_AfterInstallRemove_exe" Width="76" Margin="25,45,0,0" VerticalAlignment="Top" OffContent="否" OnContent="是" IsOn="True" FontFamily="Source Han Sans SC"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</fw:AcrylicWindow>
