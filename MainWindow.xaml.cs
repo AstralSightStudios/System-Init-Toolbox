@@ -68,7 +68,7 @@ namespace System_Init_Toolbox
             try
             {
                 string nowver = await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/now_version.txt");
-                bool a = nowver.Contains("0.2BETA");
+                bool a = nowver.Contains("0.3BETA");
                 if (a)
                 {
                     //什么都不做
