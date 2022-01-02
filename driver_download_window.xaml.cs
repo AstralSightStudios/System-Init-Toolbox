@@ -31,6 +31,7 @@ namespace System_Init_Toolbox
             {
                 //若窗口关闭即停止下载
                 wb.Close();
+                Environment.Exit(0);
             }
         }
         private static string BytesToString(decimal Bytes)
@@ -165,6 +166,12 @@ namespace System_Init_Toolbox
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             process.StartInfo.CreateNoWindow = true;
             process.Start();
+            process.WaitForExit();
+            dbg_label.Content = "安装程序结束，安装完毕！";
+            if (ToggleSwitch_AfterInstallRemove_exe.IsOn)
+            {
+                dialog.OpenFile();
+            }
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

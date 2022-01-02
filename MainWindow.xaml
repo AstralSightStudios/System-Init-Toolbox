@@ -232,7 +232,7 @@
                     <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="开发选项" FontFamily="Source Han Sans SC" IsEnabled="False" Opacity="0">
+            <TabItem Header="开发选项" FontFamily="Source Han Sans SC" Opacity="0.995">
                 <Grid Background="#00E5E5E5">
                     <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/dev_256_regular.png"/>
                     <Label Content="开发选项，仅用于开发测试。若您在正式版中看到了这个选项，请立即将此问题汇报给此软件的开发者。" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" FontSize="16"/>
