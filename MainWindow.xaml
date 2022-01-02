@@ -216,8 +216,8 @@
                     <Label Content="程序所使用到的主题：" Margin="134,224,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Source Han Sans SC" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/Kinnara/ModernWpf" Height="33" VerticalAlignment="Top" Content="Kinnara/ModernWPF" Margin="324,221,0,0" FontFamily="Source Han Sans SC"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/sourcechord/FluentWPF" Height="33" VerticalAlignment="Top" Content="sourcechord/FluentWPF" Margin="515,221,0,0" FontFamily="Source Han Sans SC"/>
-                    <Label Content="[公开测试版本]  BETA 0.3" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
-                    <Label Content="Build8" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
+                    <Label Content="[公开测试版本]  BETA 0.4" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
+                    <Label Content="Build10" HorizontalAlignment="Left" Margin="500,167,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontSize="12"/>
                     <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Source Han Sans SC" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/Stargazing-Studio/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="Stargazing-Studio/System-init-Toolbox" Margin="324,253,0,0" FontFamily="Source Han Sans SC"/>
                     <Label Content="欢迎提出issues/pull requests哦！" Margin="324,286,277,0" VerticalAlignment="Top" FontSize="12" FontFamily="Source Han Sans SC" Height="27"/>
