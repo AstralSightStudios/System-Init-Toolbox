@@ -63,9 +63,47 @@ namespace System_Init_Toolbox
         {
             public static string gpu_installed_display_drivers = "";
         }
+        public async void check_updates()
+        {
+            try
+            {
+                string nowver = await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/now_version.txt");
+                bool a = nowver.Contains("0.2BETA");
+                if (a)
+                {
+                    //什么都不做
+                }
+                else
+                {
+                    ContentDialog dialog_update_tips = new ContentDialog
+                    {
+                        Title = "有新版本可用",
+                        Content = "System Init Toolbox现已推出新版本，请前往https://github.com/Stargazing-Studio/System-Init-Toolbox/releases下载最新版本并替换旧版本以获取最佳体验。",
+                        PrimaryButtonText = "前往下载页面",
+                        CloseButtonText = "暂不更新"
+                    };
+                    ContentDialogResult result = await dialog_update_tips.ShowAsync();
+                    if (result == ContentDialogResult.Primary)
+                    {
+                        System.Diagnostics.Process.Start("explorer.exe", "https://github.com/Stargazing-Studio/System-Init-Toolbox/releases");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ContentDialog dialog_update_error = new ContentDialog
+                {
+                    Title = "检查更新时出现问题",
+                    Content = "System Init Toolbox在检查更新时出现问题。\n请检查您是否正确连接到网络。若无法联网，您可能无法使用此程序的在线版本，请使用其它方式下载此程序的离线版本。\n错误信息：\n" + ex,
+                    PrimaryButtonText = "OK",
+                };
+                ContentDialogResult result = await dialog_update_error.ShowAsync();
+            }
+        }
         public MainWindow()
         {
             InitializeComponent();
+            check_updates();
             //获取系统信息并显示
             OperatingSystem os = Environment.OSVersion;
             Version ver = os.Version;
