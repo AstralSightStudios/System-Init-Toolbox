@@ -104,8 +104,8 @@ namespace System_Init_Toolbox
             status_label.Content = "正在下载VC++ 2005 x86";
             progressBar1.IsIndeterminate = true;
             Delay(3000);
-            FileStream fs_2005_x86 = new FileStream("vc2005-x86.exe",FileMode.OpenOrCreate);
-            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/931939/download/vcredist_x86.EXE",fs_2005_x86,progressBar1,label1,this);
+            FileStream fs_2005_x86 = new FileStream("vc2005-x86.exe", FileMode.OpenOrCreate);
+            DownloadFile("https://gitee.com/search__stars/uris_-system_-init_-toolbox/attach_files/931939/download/vcredist_x86.EXE", fs_2005_x86, progressBar1, label1, this);
             fs_2005_x86.Close();
             status_label.Content = "正在下载VC++ 2005 x64";
             progressBar1.IsIndeterminate = true;

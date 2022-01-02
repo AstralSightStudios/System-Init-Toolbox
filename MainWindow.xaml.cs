@@ -3,7 +3,6 @@ using ModernWpf.Controls;
 using System;
 using System.Management;
 using System.Windows;
-using System.IO;
 
 namespace System_Init_Toolbox
 {
@@ -277,7 +276,7 @@ namespace System_Init_Toolbox
                 ContentDialog nv_notebook_gpu_error = new ContentDialog
                 {
                     Title = "Error",
-                    Content = "在获取驱动下载链接时出现错误。\n错误信息：\n"+ex+"\n发生这样的错误，极有可能是你宽带拉了，重连网络试试看？",
+                    Content = "在获取驱动下载链接时出现错误。\n错误信息：\n" + ex + "\n发生这样的错误，极有可能是你宽带拉了，重连网络试试看？",
                     CloseButtonText = "OK"
                 };
                 ContentDialogResult result = await nv_notebook_gpu_error.ShowAsync();
@@ -488,7 +487,7 @@ namespace System_Init_Toolbox
             openFileDialog.Filter = "compressed files (*.xml)|*.xml";
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                SelectedXMLFileLabel.Content = "您已选择："+openFileDialog.FileName;
+                SelectedXMLFileLabel.Content = "您已选择：" + openFileDialog.FileName;
                 SelectedXMLFileLabel_.Content = openFileDialog.FileName;
             }
             else

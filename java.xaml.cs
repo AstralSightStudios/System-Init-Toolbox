@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ModernWpf.Controls;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
-using ModernWpf.Controls;
 
 namespace System_Init_Toolbox
 {
@@ -100,12 +100,12 @@ namespace System_Init_Toolbox
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(java8_checkbox.IsChecked == true)
+            if (java8_checkbox.IsChecked == true)
             {
                 downloading = true;
                 status_label.Content = "正在下载Java 8";
                 FileStream j8 = new FileStream("java8.exe", FileMode.OpenOrCreate);
-                DownloadFile("https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935",j8,progressBar1,label1,this);
+                DownloadFile("https://javadl.oracle.com/webapps/download/AutoDL?BundleId=245479_4d5417147a92418ea8b615e228bb6935", j8, progressBar1, label1, this);
                 status_label.Content = "正在安装Java 8";
                 Delay(3000);
                 progressBar1.IsIndeterminate = true;
@@ -117,7 +117,7 @@ namespace System_Init_Toolbox
                 j8_Process.WaitForExit();
                 downloading = false;
             }
-            if(jdk17_checkbox.IsChecked == true)
+            if (jdk17_checkbox.IsChecked == true)
             {
                 downloading = true;
                 status_label.Content = "正在下载JDK 17";
@@ -134,7 +134,7 @@ namespace System_Init_Toolbox
                 j17_Process.WaitForExit();
                 downloading = false;
             }
-            if(java8_checkbox.IsChecked == false || jdk17_checkbox.IsChecked == false)
+            if (java8_checkbox.IsChecked == false || jdk17_checkbox.IsChecked == false)
             {
                 ContentDialog null_tips = new ContentDialog
                 {
