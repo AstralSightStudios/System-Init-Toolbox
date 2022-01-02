@@ -17,6 +17,7 @@ namespace System_Init_Toolbox
         private HttpWebResponse response;
         private Stream wb;
         private string global_uri = "";
+        private string name = String.Empty;
         System.Windows.Forms.SaveFileDialog dialog;
         public app_download_window(string uri, string name = "App Name", string version = "App Version")
         {
@@ -24,6 +25,7 @@ namespace System_Init_Toolbox
             this.global_uri = uri;
             AppNameLabel.Content = name;
             AppVersionLabel.Content = version;
+            this.name = name;
         }
         public void _download_window_closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -123,7 +125,7 @@ namespace System_Init_Toolbox
             downbutton.IsEnabled = false;
             downloading = true;
             dialog = new System.Windows.Forms.SaveFileDialog();//选择文件夹
-            dialog.FileName = "Graphics Driver.exe";
+            dialog.FileName = this.name;
             dialog.Filter = "compressed files (*.exe)|*.exe";
             FileStream fs;
             //bool b = DownloadFile(global_uri, fs, progressBar1, label1, this);
@@ -171,7 +173,7 @@ namespace System_Init_Toolbox
             dbg_label.Content = "安装程序结束，安装完毕！";
             if (ToggleSwitch_AfterInstallRemove_exe.IsOn)
             {
-                dialog.OpenFile();
+                File.Delete(dialog.OpenFile().ToString());
             }
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
