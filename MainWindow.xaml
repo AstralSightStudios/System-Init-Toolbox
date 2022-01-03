@@ -56,13 +56,13 @@
                     <Label x:Name="Label_GPU_driver_version" Content="图像输出显卡驱动版本（GPU Driver Version）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,205,0,0"/>
                     <Label x:Name="Label_GPU_video_processor" Content="图像输出显卡核心（GPU Core）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,235,0,0"/>
                     <Label x:Name="Label_GPU_video_memory_type" Content="图像输出显卡显存（GPU Video Memory type）：N/A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="540" Height="25" Cursor="AppStarting" HorizontalContentAlignment="Center" Margin="0,265,0,0"/>
-                    <Button Content="Installed Display Drivers" Margin="0,295,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
+                    <Button Content="Installed Display Drivers" Margin="0,295,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click" FontFamily="Roboto"/>
                 </Grid>
 
             </TabItem>
             <TabItem Header="显卡驱动" FontFamily="Source Han Sans SC">
                 <TabControl Grid.ColumnSpan="2" Background="#00E5E5E5">
-                    <TabItem Header="NVIDIA AMD" Background="#00E5E5E5">
+                    <TabItem Header="NVIDIA AMD" Background="#00E5E5E5" FontFamily="Roboto">
                         <Grid Background="#00E5E5E5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="31*"/>
@@ -122,12 +122,12 @@
                             <Label x:Name="debug_nv1" Content=" " HorizontalAlignment="Left" Margin="110,297,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29" Width="654"/>
                         </Grid>
                     </TabItem>
-                    <TabItem Header="Intel">
+                    <TabItem Header="Intel" FontFamily="Roboto">
                         <Grid Background="#00E5E5E5">
                             <Label Content="Intel" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Roboto" Height="26" Width="40"/>
-                            <Button Content="下载Intel DSA" Margin="0,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_29"/>
-                            <Label Content="由于英特尔核显型号各种都有，驱动停更时间也不一，驱动下载链接极其阴间" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top"/>
-                            <Label Content="所以还请您通过英特尔官方提供的软件（Intel DSA（驱动程序和支持助手））来下载驱动。" HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top"/>
+                            <Button Content="下载Intel DSA" Margin="0,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_29" FontFamily="Source Han Sans SC"/>
+                            <Label Content="由于英特尔核显型号各种都有，驱动停更时间也不一，驱动下载链接极其阴间" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
+                            <Label Content="所以还请您通过英特尔官方提供的软件（Intel DSA（驱动程序和支持助手））来下载驱动。" HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
                         </Grid>
                     </TabItem>
                 </TabControl>
@@ -144,7 +144,7 @@
             <TabItem Header="Office" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <TabControl Background="#00E5E5E5">
-                        <TabItem x:Name="ConfigBuilder_Webbrowser" Header="第一步：制作部署工具XML配置文件">
+                        <TabItem x:Name="ConfigBuilder_Webbrowser" Header="第一步：制作部署工具XML配置文件" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
                                 <Label Content="要安装Office，Office部署工具XML配置文件是必须的。" HorizontalAlignment="Left" Margin="220,115,0,0" VerticalAlignment="Top"/>
                                 <Label Content="您可以使用微软官方提供的网站（https://config.office.com/deploymentsettings）来生成它。" HorizontalAlignment="Center" Margin="0,138,0,0" VerticalAlignment="Top"/>
@@ -152,19 +152,19 @@
                                 <Label Content="所有选项选择完毕后，点击导出按钮，格式选择Office Open XML，然后下载即可。" HorizontalAlignment="Left" Margin="176,184,0,0" VerticalAlignment="Top"/>
                                 <Label Content="最后，请点击此页上方的第二步，选择您下载好的xml文件，开始部署（安装）Office。" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top"/>
                                 <Image HorizontalAlignment="Left" Height="100" Margin="343,0,0,0" VerticalAlignment="Top" Width="100" Source="/office_256_regular.png"/>
-                                <Button Content="在系统默认浏览器中打开生成网站" Margin="101,246,0,0" VerticalAlignment="Top" Click="Button_Click_10"/>
+                                <Button Content="在系统默认浏览器中打开生成网站" Margin="101,246,0,0" VerticalAlignment="Top" Click="Button_Click_10" FontFamily="Source Han Sans SC"/>
                                 <Label Content="或" HorizontalAlignment="Left" Margin="386,252,0,0" VerticalAlignment="Top"/>
-                                <Button Content="使用程序提供的Office2021批量版xml" Margin="445,246,0,0" VerticalAlignment="Top" Click="Button_Click_11"/>
+                                <Button Content="使用程序提供的Office2021批量版xml" Margin="445,246,0,0" VerticalAlignment="Top" Click="Button_Click_11" FontFamily="Source Han Sans SC"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="第二步：部署Office！">
+                        <TabItem Header="第二步：部署Office！" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
                                 <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="/dpy_office_256_regular.png"/>
                                 <Label Content="首先，请您选择准备好的Office文件：" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top"/>
-                                <Button Content="选择" Margin="0,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_13"/>
+                                <Button Content="选择" Margin="0,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_13" FontFamily="Source Han Sans SC"/>
                                 <Label x:Name="SelectedXMLFileLabel" Content="" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="800"/>
                                 <Label Content="最后，您就可以：" HorizontalAlignment="Center" Margin="0,201,0,0" VerticalAlignment="Top"/>
-                                <Button Content="一键部署Office！" Margin="0,233,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_12" Width="236"/>
+                                <Button Content="一键部署Office！" Margin="0,233,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_12" Width="236" FontFamily="Source Han Sans SC"/>
                                 <Label x:Name="SelectedXMLFileLabel_" Content="Label" HorizontalAlignment="Left" Margin="731,21,0,0" VerticalAlignment="Top" Opacity="0" Width="7"/>
                             </Grid>
                         </TabItem>
@@ -174,40 +174,55 @@
             <TabItem Header="软件" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
                     <TabControl Background="#00E5E5E5">
-                        <TabItem Header="游戏平台">
+                        <TabItem Header="游戏平台" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
-                                <Button Content="Steam" HorizontalAlignment="Center" Click="Button_Click_16" Margin="0,142,0,0" VerticalAlignment="Top"/>
-                                <Button Content="Epic Games" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Click="Button_Click_17"/>
-                                <Button Content="Origin" HorizontalAlignment="Center" Margin="0,214,0,0" VerticalAlignment="Top" Click="Button_Click_18"/>
-                                <Button Content="Ubisoft Connect" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Click="Button_Click_19"/>
+                                <Button Content="Steam" HorizontalAlignment="Center" Click="Button_Click_16" Margin="0,142,0,0" VerticalAlignment="Top" FontFamily="Roboto"/>
+                                <Button Content="Epic Games" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Click="Button_Click_17" FontFamily="Roboto"/>
+                                <Button Content="Origin" HorizontalAlignment="Center" Margin="0,214,0,0" VerticalAlignment="Top" Click="Button_Click_18" FontFamily="Roboto"/>
+                                <Button Content="Ubisoft Connect" HorizontalAlignment="Center" Margin="0,250,0,0" VerticalAlignment="Top" Click="Button_Click_19" FontFamily="Roboto"/>
                                 <Image HorizontalAlignment="Left" Height="137" Margin="332,10,0,0" VerticalAlignment="Top" Width="154" Source="/games_256_regular.png"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="浏览器">
+                        <TabItem Header="浏览器" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
                                 <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/browser_plant_256_regular.png"/>
-                                <Button Content="Google Chrome" Margin="0,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_22"/>
-                                <Button Content="Microsoft Edge（Chrome内核）" Margin="0,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_21"/>
-                                <Button Content="Firefox（国际版）" Margin="0,234,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_20"/>
+                                <Button Content="Google Chrome" Margin="0,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_22" FontFamily="Source Han Sans SC"/>
+                                <Button Content="Microsoft Edge（Chrome内核）" Margin="0,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_21" FontFamily="Source Han Sans SC"/>
+                                <Button Content="Firefox（国际版）" Margin="0,234,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_20" FontFamily="Source Han Sans SC"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="程序猿必备">
+                        <TabItem Header="程序猿必备" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
                                 <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/code_256_regular.png"/>
-                                <Button Content="Visual Studio - 宇宙第一IDE" Margin="0,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_25"/>
-                                <Button Content="Visual Studio Code - 轻便好用" Margin="0,178,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_26"/>
-                                <Button Content="Python - 超！级！简！单！" Margin="0,214,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_27"/>
-                                <Button Content="Dev C++ - 初学者必备" Margin="0,250,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_28"/>
+                                <Button Content="Visual Studio - 宇宙第一IDE" Margin="0,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_25" FontFamily="Source Han Sans SC"/>
+                                <Button Content="Visual Studio Code - 轻便好用" Margin="0,178,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_26" FontFamily="Source Han Sans SC"/>
+                                <Button Content="Python - 超！级！简！单！" Margin="0,214,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_27" FontFamily="Source Han Sans SC"/>
+                                <Button Content="Dev C++ - 初学者必备" Margin="0,250,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_28" FontFamily="Source Han Sans SC"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="VPN">
+                        <TabItem Header="VPN" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
                                 <Image HorizontalAlignment="Center" Height="100" Margin="0,25,0,0" VerticalAlignment="Top" Width="100" Source="/vpn_256_regular.png"/>
-                                <Button Content="StarVPN - 勉强能用" HorizontalAlignment="Center" Click="Button_Click_23"/>
-                                <Button Content="极光加速器（原佛跳墙） - 非常推荐" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Click="Button_Click_24"/>
+                                <Button Content="StarVPN - 勉强能用" HorizontalAlignment="Center" Click="Button_Click_23" FontFamily="Source Han Sans SC"/>
+                                <Button Content="极光加速器（原佛跳墙） - 非常推荐" HorizontalAlignment="Center" Margin="0,182,0,0" VerticalAlignment="Top" Click="Button_Click_24" FontFamily="Source Han Sans SC"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="WSA工具" FontFamily="Source Han Sans SC" Background="#00E5E5E5">
+                <Grid Background="#00E5E5E5">
+                    <TabControl Background="#00E5E5E5">
+                        <TabItem Header="安装WSA（Windows Subsystem For Android）" FontFamily="Source Han Sans SC">
+                            <Grid Background="#00E5E5E5">
+
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="在WSA中安装程序" FontFamily="Source Han Sans SC">
+                            <Grid Background="#00E5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                    <Label Content="Disclaimer:  This not function made by Microsoft, and it's in no way related to them. It's not related to Google or Amazon either." HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="12"/>
                 </Grid>
             </TabItem>
             <TabItem Header="设置" FontFamily="Source Han Sans SC">
@@ -240,8 +255,8 @@
                 <Grid Background="#00E5E5E5">
                     <Label Content="若您觉得这款软件还不错，烦请捐助一下~" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" FontSize="20"/>
                     <Label Content="捐助不是最重要的，只要大家觉得这款软件好用，就是我们前进的最大动力！" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" FontSize="10"/>
-                    <Button Content="微信支付" Margin="230,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_14"/>
-                    <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15"/>
+                    <Button Content="微信支付" Margin="230,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_14" FontFamily="Source Han Sans SC"/>
+                    <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15" FontFamily="Source Han Sans SC"/>
                 </Grid>
             </TabItem>
             <TabItem Header="开发选项" FontFamily="Source Han Sans SC" Opacity="0" IsEnabled="False">
