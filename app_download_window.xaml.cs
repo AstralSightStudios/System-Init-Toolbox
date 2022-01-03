@@ -23,6 +23,7 @@ namespace System_Init_Toolbox
         {
             InitializeComponent();
             this.global_uri = uri;
+            this.Closing += _download_window_closing;
             AppNameLabel.Content = name;
             AppVersionLabel.Content = version;
             this.name = name;
