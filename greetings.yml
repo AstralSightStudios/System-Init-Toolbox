@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: '这应该是你首次发布issue吧？你能给我们提出建议，我们当然会很开心。不过，在这之后，还是建议去看看已经close的issue，说不定，会给你一些帮助呢！'
+        pr-message: '天啊，居然有好心人会为这个仓库提出Pull request！尽管你是第一次，但也足够让我们惊讶了。谢谢！'
