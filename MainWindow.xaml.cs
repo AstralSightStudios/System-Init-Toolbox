@@ -586,5 +586,11 @@ namespace System_Init_Toolbox
 		{
 			System.Diagnostics.Process.Start("explorer.exe", "https://www.embarcadero.com/cn/free-tools/dev-cpp");
 		}
-	}
+
+        private void Button_Click_29(object sender, RoutedEventArgs e)
+        {
+			app_download_window app_download_window = new app_download_window("https://dsadata.intel.com/installer", "英特尔® 驱动程序和支持助手", "2022 Release 17.x");
+			app_download_window.Show();
+		}
+    }
 }

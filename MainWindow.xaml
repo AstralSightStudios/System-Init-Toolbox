@@ -61,64 +61,76 @@
 
             </TabItem>
             <TabItem Header="显卡驱动" FontFamily="Source Han Sans SC">
-                <Grid Background="#00E5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="31*"/>
-                        <ColumnDefinition Width="49*"/>
-                    </Grid.ColumnDefinitions>
-                    <ComboBox x:Name="nv_platform" Margin="91,109,0,0" Width="215" Height="32">
-                        <ComboBoxItem>
-                            <TextBlock Text="台式电脑"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="笔记本"/>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <Label Content="NVIDIA" HorizontalAlignment="Left" Margin="166,41,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Roboto" Height="26" Width="64"/>
-                    <ComboBox x:Name="amd_platform" Margin="200,109,0,0" Width="215" Grid.Column="1" Height="32">
-                        <ComboBoxItem>
-                            <TextBlock Text="台式电脑/笔记本"/>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <Label Content="AMD" HorizontalAlignment="Left" Margin="286,41,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Roboto" Grid.Column="1" Height="26" Width="44"/>
-                    <Button Content="下载" Margin="176,230,0,0" VerticalAlignment="Top" Height="31" Width="46" Click="Button_Click_4" FontFamily="Source Han Sans SC"/>
-                    <Button Content="下载" Margin="284,230,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="46" Click="Button_Click_5" FontFamily="Source Han Sans SC"/>
-                    <ComboBox x:Name="nv_driver_version" Margin="92,150,0,0" Width="214" Height="32">
-                        <ComboBoxItem>
-                            <TextBlock Text="最新版本（Win10 64位/Win11 64位）"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="2021.9.20批次驱动停更卡（600（GT640及以上）/700系列（750ti请直接下载最新驱动）等）"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="2019.4.11批次驱动停更卡（600M/700M/800M移动端系列等）"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="2018.3.27批次驱动停更卡（400/500系列/600系列（GT630及以下，以上请下载20210920批次驱动））"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="2016.12.14批次驱动停更卡（8系列/9系列/100系列/200系列/300系列）等"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="远古显卡"/>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox x:Name="amd_driver_version" Margin="200,150,0,0" Width="215" Grid.Column="1" Height="32">
-                        <ComboBoxItem>
-                            <TextBlock Text="最新版本（Win10 64位/Win11 64位）"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="2021.6.21批次驱动停更卡（Win10 64位/Win11 64位）"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="2015.7.29批次批次驱动停更卡（Win10 64位/Win11 64位）"/>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock Text="远古显卡"/>
-                        </ComboBoxItem>
-                    </ComboBox>
-                    <Label x:Name="debug_nv1" Content=" " HorizontalAlignment="Left" Margin="110,297,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29" Width="654"/>
-                </Grid>
+                <TabControl Grid.ColumnSpan="2" Background="#00E5E5E5">
+                    <TabItem Header="NVIDIA AMD" Background="#00E5E5E5">
+                        <Grid Background="#00E5E5E5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="31*"/>
+                                <ColumnDefinition Width="49*"/>
+                            </Grid.ColumnDefinitions>
+                            <ComboBox x:Name="nv_platform" Margin="91,109,0,0" Width="215" Height="32">
+                                <ComboBoxItem>
+                                    <TextBlock Text="台式电脑"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="笔记本"/>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Label Content="NVIDIA" HorizontalAlignment="Left" Margin="166,41,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Roboto" Height="26" Width="64"/>
+                            <ComboBox x:Name="amd_platform" Margin="200,109,0,0" Width="215" Grid.Column="1" Height="32">
+                                <ComboBoxItem>
+                                    <TextBlock Text="台式电脑/笔记本"/>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Label Content="AMD" HorizontalAlignment="Left" Margin="286,41,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Roboto" Grid.Column="1" Height="26" Width="44"/>
+                            <Button Content="下载" Margin="176,230,0,0" VerticalAlignment="Top" Height="31" Width="46" Click="Button_Click_4" FontFamily="Source Han Sans SC"/>
+                            <Button Content="下载" Margin="284,230,0,0" VerticalAlignment="Top" Grid.Column="1" Height="31" Width="46" Click="Button_Click_5" FontFamily="Source Han Sans SC"/>
+                            <ComboBox x:Name="nv_driver_version" Margin="92,150,0,0" Width="214" Height="32">
+                                <ComboBoxItem>
+                                    <TextBlock Text="最新版本（Win10 64位/Win11 64位）"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="2021.9.20批次驱动停更卡（600（GT640及以上）/700系列（750ti请直接下载最新驱动）等）"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="2019.4.11批次驱动停更卡（600M/700M/800M移动端系列等）"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="2018.3.27批次驱动停更卡（400/500系列/600系列（GT630及以下，以上请下载20210920批次驱动））"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="2016.12.14批次驱动停更卡（8系列/9系列/100系列/200系列/300系列）等"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="远古显卡"/>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <ComboBox x:Name="amd_driver_version" Margin="200,150,0,0" Width="215" Grid.Column="1" Height="32">
+                                <ComboBoxItem>
+                                    <TextBlock Text="最新版本（Win10 64位/Win11 64位）"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="2021.6.21批次驱动停更卡（Win10 64位/Win11 64位）"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="2015.7.29批次批次驱动停更卡（Win10 64位/Win11 64位）"/>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock Text="远古显卡"/>
+                                </ComboBoxItem>
+                            </ComboBox>
+                            <Label x:Name="debug_nv1" Content=" " HorizontalAlignment="Left" Margin="110,297,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29" Width="654"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Intel">
+                        <Grid Background="#00E5E5E5">
+                            <Label Content="Intel" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Roboto" Height="26" Width="40"/>
+                            <Button Content="下载Intel DSA" Margin="0,162,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_29"/>
+                            <Label Content="由于英特尔核显型号各种都有，驱动停更时间也不一，驱动下载链接极其阴间" HorizontalAlignment="Center" Margin="0,106,0,0" VerticalAlignment="Top"/>
+                            <Label Content="所以还请您通过英特尔官方提供的软件（Intel DSA（驱动程序和支持助手））来下载驱动。" HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
             </TabItem>
             <TabItem Header="运行库" Background="#00E5E5E5" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
@@ -232,7 +244,7 @@
                     <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="开发选项" FontFamily="Source Han Sans SC" Opacity="0.995">
+            <TabItem Header="开发选项" FontFamily="Source Han Sans SC" Opacity="0" IsEnabled="False">
                 <Grid Background="#00E5E5E5">
                     <Image HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="/dev_256_regular.png"/>
                     <Label Content="开发选项，仅用于开发测试。若您在正式版中看到了这个选项，请立即将此问题汇报给此软件的开发者。" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" FontSize="16"/>
