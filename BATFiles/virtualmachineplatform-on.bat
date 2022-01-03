@@ -1,0 +1,1 @@
+start /w pkgmgr /iu:VirtualMachinePlatform

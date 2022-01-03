@@ -215,6 +215,11 @@
                     <TabControl Background="#00E5E5E5">
                         <TabItem Header="安装WSA（Windows Subsystem For Android）" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
+                                <Label Content="要安装WSA，您必须先开启虚拟机平台功能（否则会无法打开）：" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Windows Subsystem For Android" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Roboto"/>
+                                <Button Content="开启" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click_30"/>
+                                <Label Content="开启后，您即可：" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top"/>
+                                <Button Content="下载Windows Subsystem For Android" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Margin="0,212,0,0" VerticalAlignment="Top" Click="Button_Click_31"/>
 
                             </Grid>
                         </TabItem>

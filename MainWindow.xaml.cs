@@ -3,6 +3,7 @@ using ModernWpf.Controls;
 using System;
 using System.Management;
 using System.Windows;
+using System.Diagnostics;
 
 namespace System_Init_Toolbox
 {
@@ -590,6 +591,34 @@ namespace System_Init_Toolbox
         private void Button_Click_29(object sender, RoutedEventArgs e)
         {
 			app_download_window app_download_window = new app_download_window("https://dsadata.intel.com/installer", "英特尔® 驱动程序和支持助手", "2022 Release 17.x");
+			app_download_window.Show();
+		}
+
+        private async void Button_Click_30(object sender, RoutedEventArgs e)
+        {
+			ContentDialog openvmpDialog = new ContentDialog
+			{
+				Title = "确定要开启？",
+				Content = "如果您确定开启，可能就会导致除WSA外的安卓模拟器无法使用。经测试，mumu模拟器、雷电模拟器均会受到影响。并且Vmware等虚拟机也会有无法启动的现象出现，所以还请您慎重考虑。\n当您点击确定后，程序可能会未响应，这是正常现象，请不要关闭程序，耐心等待。开启成功后可能会有弹窗要求您重新启动，按提示操作即可。",
+				PrimaryButtonText = "确定",
+				CloseButtonText = "取消"
+			};
+
+			ContentDialogResult result = await openvmpDialog.ShowAsync();
+
+			if (result == ContentDialogResult.Primary)//如果用户点确定
+			{
+				Process batvmp_Process = new Process();
+				batvmp_Process.StartInfo.FileName = "./BATFiles/virtualmachineplatform-on.bat";
+				batvmp_Process.StartInfo.CreateNoWindow = true;
+				batvmp_Process.Start();
+				batvmp_Process.WaitForExit();
+			}
+		}
+
+        private void Button_Click_31(object sender, RoutedEventArgs e)
+        {
+			app_download_window app_download_window = new app_download_window("http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/43d50125-dccc-490b-8c78-3106e736940d?P1=1641246234&P2=404&P3=2&P4=ai6eyQfCfBA5uqsHucQ202z7MEf%2foUe2s0DfjKAGCJmmsqsPHn1de8PQq3D7Wa2hJoQzR%2bQHgPimHjjm6S2Rew%3d%3d", "Windows Subsystem For Android", "1.8.32828");
 			app_download_window.Show();
 		}
     }
