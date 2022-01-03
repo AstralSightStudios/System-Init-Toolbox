@@ -22,6 +22,7 @@ namespace System_Init_Toolbox
 		{
 			InitializeComponent();
 			this.global_uri = uri;
+			this.Closing += _download_window_closing;
 			DriverNameLabel.Content = name;
 			DriverVersionLabel.Content = version;
 		}
