@@ -17,9 +17,10 @@ namespace System_Init_Toolbox
         private HttpWebResponse response;
         private Stream wb;
         private string global_uri = "";
+        private bool wsa = false;
         private string name = String.Empty;
         System.Windows.Forms.SaveFileDialog dialog;
-        public app_download_window(string uri, string name = "App Name", string version = "App Version")
+        public app_download_window(string uri, string name = "App Name", string version = "App Version", bool wsa = false)
         {
             InitializeComponent();
             this.global_uri = uri;
@@ -27,6 +28,7 @@ namespace System_Init_Toolbox
             AppNameLabel.Content = name;
             AppVersionLabel.Content = version;
             this.name = name;
+            this.wsa = wsa;
         }
         public void _download_window_closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -127,7 +129,7 @@ namespace System_Init_Toolbox
             downloading = true;
             dialog = new System.Windows.Forms.SaveFileDialog();//选择文件夹
             dialog.FileName = this.name;
-            dialog.Filter = "compressed files (*.exe)|*.exe";
+            dialog.Filter = "executable files (*.exe)|*.exe";
             FileStream fs;
             //bool b = DownloadFile(global_uri, fs, progressBar1, label1, this);
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -153,7 +155,7 @@ namespace System_Init_Toolbox
                         ContentDialog online_file_not_found = new ContentDialog
                         {
                             Title = "服务器文件不存在",
-                            Content = "服务器不存在驱动文件。难道...AMD和NVIDIA跑路了？！",
+                            Content = "服务器不存在驱动文件。难道...软件提供商跑路了！",
                             CloseButtonText = "OK"
                         };
                         ContentDialogResult result_five = await online_file_not_found.ShowAsync();
@@ -163,15 +165,34 @@ namespace System_Init_Toolbox
         }
         public void run_setup_func()
         {
-            dbg_label.Content = "等待显卡驱动安装程序结束......";
-            Process process = new Process();//创建进程对象    
-            ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName); // 括号里是(程序名,参数)
-            process.StartInfo = startInfo;
-            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            process.WaitForExit();
-            dbg_label.Content = "安装程序结束，安装完毕！";
+            if(wsa)
+            {
+                dbg_label.Content = "正在安装WSA......";
+                progressBar1.IsIndeterminate = true;
+                Process p = new Process();
+                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardInput = true;
+                p.StartInfo.CreateNoWindow = false;
+                p.Start();
+                p.StandardInput.WriteLine("powershell -command \"& {Add-AppxPackage -Path \"" + dialog.OpenFile() +"\"}\"" + "&exit");
+                p.StandardInput.AutoFlush = true;
+                p.WaitForExit();
+                p.Close();
+            }
+            else
+            {
+                dbg_label.Content = "等待程序安装程序结束......";
+                Process process = new Process();//创建进程对象    
+                ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName); // 括号里是(程序名,参数)
+                process.StartInfo = startInfo;
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                process.StartInfo.CreateNoWindow = true;
+                process.Start();
+                process.WaitForExit();
+                dbg_label.Content = "安装程序结束，安装完毕！";
+            }
+
             if (ToggleSwitch_AfterInstallRemove_exe.IsOn)
             {
                 File.Delete(dialog.OpenFile().ToString());

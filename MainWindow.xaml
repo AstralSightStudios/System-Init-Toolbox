@@ -217,14 +217,21 @@
                             <Grid Background="#00E5E5E5">
                                 <Label Content="要安装WSA，您必须先开启虚拟机平台功能（否则会无法打开）：" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top"/>
                                 <Label Content="Windows Subsystem For Android" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Roboto"/>
-                                <Button Content="开启" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click_30"/>
+                                <Button Content="开启" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click_30" Margin="0,147,0,0" VerticalAlignment="Top"/>
                                 <Label Content="开启后，您即可：" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top"/>
                                 <Button Content="下载Windows Subsystem For Android" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Margin="0,212,0,0" VerticalAlignment="Top" Click="Button_Click_31"/>
 
                             </Grid>
                         </TabItem>
                         <TabItem Header="在WSA中安装程序" FontFamily="Source Han Sans SC">
-                            <Grid Background="#00E5E5E5"/>
+                            <Grid Background="#00E5E5E5">
+                                <Label Content="安装APK程序" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Source Han Sans SC"/>
+                                <Button Content="选择" Margin="0,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_32"/>
+                                <Label Content="选择APK文件：" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="stlabel" Content=" " HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="wsa_lj" Content="Label" HorizontalAlignment="Left" Margin="742,22,0,0" VerticalAlignment="Top" Opacity="0"/>
+                                <Button x:Name="wsa_install_bt" Content="立即安装！" Margin="0,222,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" IsEnabled="False" Click="wsa_install_bt_Click"/>
+                            </Grid>
                         </TabItem>
                     </TabControl>
                     <Label Content="Disclaimer:  This not function made by Microsoft, and it's in no way related to them. It's not related to Google or Amazon either." HorizontalAlignment="Center" Margin="0,315,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontSize="12"/>

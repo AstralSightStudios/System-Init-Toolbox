@@ -616,10 +616,58 @@ namespace System_Init_Toolbox
 			}
 		}
 
-        private void Button_Click_31(object sender, RoutedEventArgs e)
-        {
-			app_download_window app_download_window = new app_download_window("http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/43d50125-dccc-490b-8c78-3106e736940d?P1=1641246234&P2=404&P3=2&P4=ai6eyQfCfBA5uqsHucQ202z7MEf%2foUe2s0DfjKAGCJmmsqsPHn1de8PQq3D7Wa2hJoQzR%2bQHgPimHjjm6S2Rew%3d%3d", "Windows Subsystem For Android", "1.8.32828");
+        private async void Button_Click_31(object sender, RoutedEventArgs e)
+		{
+			ContentDialog installwsaDialog = new ContentDialog
+			{
+				Title = "提示",
+				Content = "在我们解决一些技术问题前，此程序暂时不能为您安装WSA，您需要手动安装。\n请参考：https://blog.csdn.net/qq_43733123/article/details/121194702 \n当然，如果您有什么解决此问题的好方法，也请到此程序的Github Issues页面的相关主题下回复您的想法或解决方法。",
+				PrimaryButtonText = "打开手动安装参考教程",
+				SecondaryButtonText = "打开关于此问题的issue",
+				CloseButtonText = "关闭此对话框"
+			};
+
+			ContentDialogResult result = await installwsaDialog.ShowAsync();
+
+			if (result == ContentDialogResult.Primary)
+			{
+				System.Diagnostics.Process.Start("explorer.exe", "https://blog.csdn.net/qq_43733123/article/details/121194702");
+			}
+			if (result == ContentDialogResult.Secondary)
+            {
+				System.Diagnostics.Process.Start("explorer.exe", "https://github.com/Stargazing-Studio/System-Init-Toolbox/issues/7");
+			}
+			/*
+			app_download_window app_download_window = new app_download_window("http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/43d50125-dccc-490b-8c78-3106e736940d?P1=1641246234&P2=404&P3=2&P4=ai6eyQfCfBA5uqsHucQ202z7MEf%2foUe2s0DfjKAGCJmmsqsPHn1de8PQq3D7Wa2hJoQzR%2bQHgPimHjjm6S2Rew%3d%3d", "Windows Subsystem For Android", "1.8.32828",true);
 			app_download_window.Show();
+			*/
 		}
+
+        private async void Button_Click_32(object sender, RoutedEventArgs e)
+        {
+			System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+			openFileDialog.Filter = "Android APK (*.apk)|*.apk";
+			if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				stlabel.Content = "您已选择：" + openFileDialog.FileName;
+				wsa_lj.Content = openFileDialog.FileName;
+				wsa_install_bt.IsEnabled = true;
+			}
+			else
+			{
+				ContentDialog nullselect = new ContentDialog
+				{
+					Title = "您没有选择文件",
+					Content = "您似乎没用选择文件哦~",
+					PrimaryButtonText = "OK",
+				};
+				ContentDialogResult result = await nullselect.ShowAsync();
+			}
+		}
+
+        private void wsa_install_bt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
