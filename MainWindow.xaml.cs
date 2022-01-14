@@ -4,6 +4,7 @@ using System;
 using System.Management;
 using System.Windows;
 using System.Diagnostics;
+using System.Windows.Media.Imaging;
 
 namespace System_Init_Toolbox
 {
@@ -12,6 +13,7 @@ namespace System_Init_Toolbox
 	/// </summary>
 	public partial class MainWindow
 	{
+		public bool inited = false;
 		//获取分区大小函数
 		public static long GetHardDiskSpace(string str_HardDiskName)//string盘符变量
 		{
@@ -67,9 +69,8 @@ namespace System_Init_Toolbox
 		{
 			try
 			{
-                //目前这玩意是0.2BETA
 				string nowver = await Utilities.get("https://gitee.com/search__stars/uris_-system_-init_-toolbox/raw/master/now_version.txt");
-				bool a = nowver.Contains("0.3BETA");
+				bool a = nowver.Contains("0.4BETA");
 				if (!a)
 				{
 					ContentDialog dialog_update_tips = new ContentDialog
@@ -100,7 +101,11 @@ namespace System_Init_Toolbox
 		}
 		public MainWindow()
 		{
+			Configer.whether_reset_configs();
+			Configer.real_firstrun(wsa_ip_textbox,wsa_port_textbox, a_sdr, r_sdr, g_sdr, b_sdr);
 			InitializeComponent();
+			inited = false;
+			DateTime current = DateTime.Now;
 			check_updates();
 			//获取系统信息并显示
 			OperatingSystem os = Environment.OSVersion;
@@ -171,6 +176,30 @@ namespace System_Init_Toolbox
 			Label_Hardware_BIOS_ReleaseDate.Content = "BIOS发布日期：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BIOSReleaseDate");
 			Label_Hardware_BIOS_Version.Content = "BIOS版本：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("BIOSVersion");
 			Label_Hardware_BIOS_Manufacturer.Content = "BIOS制造商：" + Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("SystemManufacturer");
+            try
+            {
+				wsa_ip_textbox.Text = System.IO.File.ReadAllText("configs/wsa_ip.txt");
+				wsa_port_textbox.Text = System.IO.File.ReadAllText("configs/wsa_port.txt");
+				a_sdr.Value = (byte)int.Parse(System.IO.File.ReadAllText("configs/bg_color_a.txt"));
+				r_sdr.Value = (byte)int.Parse(System.IO.File.ReadAllText("configs/bg_color_r.txt"));
+				g_sdr.Value = (byte)int.Parse(System.IO.File.ReadAllText("configs/bg_color_g.txt"));
+				b_sdr.Value = (byte)int.Parse(System.IO.File.ReadAllText("configs/bg_color_b.txt"));
+				a_sd.Content = (int)a_sdr.Value;
+				r_sd.Content = (int)r_sdr.Value;
+				g_sd.Content = (int)g_sdr.Value;
+				b_sd.Content = (int)b_sdr.Value;
+				this.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb((byte)a_sdr.Value, (byte)r_sdr.Value, (byte)g_sdr.Value, (byte)b_sdr.Value));
+			}
+            catch
+            {
+				//什么也不做 诶就是玩儿
+            }
+			DateTime current2 = DateTime.Now;
+			while (current2.AddMilliseconds(100) > DateTime.Now)
+			{
+				System.Windows.Forms.Application.DoEvents();
+			}
+			inited = true;
 		}
 
 		//输出变量gpu_installed_display_drivers
@@ -667,7 +696,127 @@ namespace System_Init_Toolbox
 
         private void wsa_install_bt_Click(object sender, RoutedEventArgs e)
         {
+			stlabel.Content = "正在安装...程序可能会未响应，这是正常现象，稍安勿躁，等待完成即可";
+			wsa_install_bt.IsEnabled = false;
+			DateTime current = DateTime.Now;
+			while (current.AddMilliseconds(1000) > DateTime.Now)
+			{
+				System.Windows.Forms.Application.DoEvents();
+			}
+			Process.Start("android-platform-tools/adb.exe","connect " + wsa_ip_textbox.Text + ":" + wsa_port_textbox.Text).WaitForExit();
+			Process.Start("android-platform-tools/adb.exe","install \"" + wsa_lj.Content + "\"").WaitForExit();
+			stlabel.Content = "命令执行完毕，但我们无法自动确认是否成功安装，还请您自行判断安装是否成功。";
+		}
 
+        private void wsa_ip_textbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (inited)
+            {
+				System.IO.File.WriteAllText("configs/wsa_ip.txt", wsa_ip_textbox.Text);
+			}
+		}
+
+        private void wsa_port_textbox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (inited)
+            {
+				System.IO.File.WriteAllText("configs/wsa_port.txt", wsa_port_textbox.Text);
+			}
+		}
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (inited)
+            {
+				this.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb((byte)a_sdr.Value, (byte)r_sdr.Value, (byte)g_sdr.Value, (byte)b_sdr.Value));
+				a_sd.Content = (int)a_sdr.Value;
+				r_sd.Content = (int)r_sdr.Value;
+				g_sd.Content = (int)g_sdr.Value;
+				b_sd.Content = (int)b_sdr.Value;
+				System.IO.File.WriteAllText("configs/bg_color_a.txt", a_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_r.txt", r_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_g.txt", g_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_b.txt", b_sdr.Value.ToString());
+            }
+		}
+
+        private void g_sdr_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+			if (inited)
+			{
+				this.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb((byte)a_sdr.Value, (byte)r_sdr.Value, (byte)g_sdr.Value, (byte)b_sdr.Value));
+				a_sd.Content = (int)a_sdr.Value;
+				r_sd.Content = (int)r_sdr.Value;
+				g_sd.Content = (int)g_sdr.Value;
+				b_sd.Content = (int)b_sdr.Value;
+				System.IO.File.WriteAllText("configs/bg_color_a.txt", a_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_r.txt", r_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_g.txt", g_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_b.txt", b_sdr.Value.ToString());
+			}
+		}
+
+        private void b_sdr_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+			if (inited)
+			{
+				this.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb((byte)a_sdr.Value, (byte)r_sdr.Value, (byte)g_sdr.Value, (byte)b_sdr.Value));
+			
+				a_sd.Content = (int)a_sdr.Value;
+				r_sd.Content = (int)r_sdr.Value;
+				g_sd.Content = (int)g_sdr.Value;
+				b_sd.Content = (int)b_sdr.Value;
+				System.IO.File.WriteAllText("configs/bg_color_a.txt", a_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_r.txt", r_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_g.txt", g_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_b.txt", b_sdr.Value.ToString());
+			}
+		}
+
+        private void a_sdr_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+			if (inited)
+			{
+				this.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb((byte)a_sdr.Value, (byte)r_sdr.Value, (byte)g_sdr.Value, (byte)b_sdr.Value));
+				a_sd.Content = (int)a_sdr.Value;
+				r_sd.Content = (int)r_sdr.Value;
+				g_sd.Content = (int)g_sdr.Value;
+				b_sd.Content = (int)b_sdr.Value;
+				System.IO.File.WriteAllText("configs/bg_color_a.txt", a_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_r.txt", r_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_g.txt", g_sdr.Value.ToString());
+				System.IO.File.WriteAllText("configs/bg_color_b.txt", b_sdr.Value.ToString());
+			}
+		}
+
+        private async void Button_Click_33(object sender, RoutedEventArgs e)
+        {
+			System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
+			openFileDialog.Filter = "Image File (*.png)|*.png";
+			if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				st_bg_image_textbox.Text = openFileDialog.FileName;
+			}
+			else
+			{
+				ContentDialog nullselect = new ContentDialog
+				{
+					Title = "您没有选择文件",
+					Content = "您似乎没用选择文件哦~",
+					PrimaryButtonText = "OK",
+				};
+				ContentDialogResult result = await nullselect.ShowAsync();
+			}
+		}
+
+        private void Button_Click_34(object sender, RoutedEventArgs e)
+        {
+			this.Background = new System.Windows.Media.ImageBrush(new BitmapImage(new Uri(st_bg_image_textbox.Text)));
+        }
+
+        private void Button_Click_35(object sender, RoutedEventArgs e)
+        {
+			
         }
     }
 }

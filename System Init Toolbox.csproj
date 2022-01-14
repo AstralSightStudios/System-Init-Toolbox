@@ -12,7 +12,7 @@
     <AnalysisLevel>none</AnalysisLevel>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
-    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -44,12 +44,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentWPF" Version="0.9.0" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1054.31" />
+    <PackageReference Include="FluentWPF" Version="0.10.2" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1083-prerelease" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.4.1" />
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22523-preview" />
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22533-preview" />
     <PackageReference Include="Microsoft.Windows.WinMD" Version="1.0.210629.2" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     <PackageReference Include="System.Management" Version="6.0.0" />
   </ItemGroup>
 

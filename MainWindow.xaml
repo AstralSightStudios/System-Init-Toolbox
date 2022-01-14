@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:local="clr-namespace:System_Init_Toolbox"
+        fw:AcrylicWindow.Enabled="{Binding IsOn, ElementName=toggleswitch_AC}"
         mc:Ignorable="d"
-        xmlns:ui="http://schemas.modernwpf.com/2019"
-        Background="#70FFFFFF" FontFamily="Source Han Sans SC" ResizeMode="CanMinimize" Height="420" Width="800" Icon="/appicon.png" Title="System Init Toolbox - 帮助你在安装新系统后快速安装运行库等必备程序！">
+        xmlns:ui="http://schemas.modernwpf.com/2019" FontFamily="Source Han Sans SC" ResizeMode="CanMinimize" Height="420" Width="800" Icon="/appicon.png" Title="System Init Toolbox - 帮助你在安装新系统后快速安装运行库等必备程序！" SizeToContent="Manual" Background="#70FFFFFF">
     <Grid Background="#00E5E5E5">
         <TabControl Background="#00E5E5E5" FontFamily="Source Han Sans SC">
             <TabItem Header="系统信息" FontFamily="Source Han Sans SC">
@@ -217,20 +217,29 @@
                             <Grid Background="#00E5E5E5">
                                 <Label Content="要安装WSA，您必须先开启虚拟机平台功能（否则会无法打开）：" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top"/>
                                 <Label Content="Windows Subsystem For Android" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Roboto"/>
-                                <Button Content="开启" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click_30" Margin="0,147,0,0" VerticalAlignment="Top"/>
-                                <Label Content="开启后，您即可：" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top"/>
-                                <Button Content="下载Windows Subsystem For Android" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Margin="0,212,0,0" VerticalAlignment="Top" Click="Button_Click_31"/>
-
+                                <Button Content="开启" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Click="Button_Click_30" Margin="0,140,0,0" VerticalAlignment="Top"/>
+                                <Label Content="开启后，您即可：" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top"/>
+                                <Button Content="下载Windows Subsystem For Android" HorizontalAlignment="Center" FontFamily="Source Han Sans SC" Margin="0,203,0,0" VerticalAlignment="Top" Click="Button_Click_31"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="在WSA中安装程序" FontFamily="Source Han Sans SC">
                             <Grid Background="#00E5E5E5">
                                 <Label Content="安装APK程序" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Source Han Sans SC"/>
-                                <Button Content="选择" Margin="0,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_32"/>
+                                <Button Content="选择" Margin="0,135,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_32" FontFamily="Source Han Sans SC"/>
                                 <Label Content="选择APK文件：" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top"/>
                                 <Label x:Name="stlabel" Content=" " HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top"/>
                                 <Label x:Name="wsa_lj" Content="Label" HorizontalAlignment="Left" Margin="742,22,0,0" VerticalAlignment="Top" Opacity="0"/>
-                                <Button x:Name="wsa_install_bt" Content="立即安装！" Margin="0,222,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" IsEnabled="False" Click="wsa_install_bt_Click"/>
+                                <Button x:Name="wsa_install_bt" Content="立即安装！" Margin="0,222,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" IsEnabled="False" Click="wsa_install_bt_Click" FontFamily="Source Han Sans SC"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="设置（WSA工具）" FontFamily="Source Han Sans SC">
+                            <Grid>
+                                <Label Content="WSA服务器IP：" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+                                <TextBox x:Name="wsa_ip_textbox" HorizontalAlignment="Left" Margin="20,35,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="150" TextChanged="wsa_ip_textbox_TextChanged" FontFamily="Source Han Sans SC"/>
+                                <Label Content="WSA服务器端口：" HorizontalAlignment="Left" Margin="20,72,0,0" VerticalAlignment="Top"/>
+                                <TextBox x:Name="wsa_port_textbox" HorizontalAlignment="Left" Margin="20,97,0,0" TextWrapping="Wrap" Text="N/A" VerticalAlignment="Top" Width="150" TextChanged="wsa_port_textbox_TextChanged" FontFamily="Source Han Sans SC"/>
+                                <Label Content="（注：一般情况下，IP填写127.0.0.1（本机），端口填58526即可）" HorizontalAlignment="Left" Margin="20,141,0,0" VerticalAlignment="Top"/>
+
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -239,7 +248,41 @@
             </TabItem>
             <TabItem Header="设置" FontFamily="Source Han Sans SC">
                 <Grid Background="#00E5E5E5">
-                    <Label Content="暂无设置" HorizontalAlignment="Center" Margin="0,163,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <TabControl Background="#00E5E5E5">
+                        <TabItem Header="程序设置" FontFamily="Source Han Sans SC">
+                            <Grid Background="#00E5E5E5">
+                                <Button Content="建议别点" Margin="7,10,0,0" VerticalAlignment="Top" Width="120"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="程序界面自定义（窗口）" FontFamily="Source Han Sans SC">
+                            <Grid Background="#00E5E5E5">
+                                <Label Content="窗口背景" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontWeight="Normal" FontSize="36"/>
+                                <Label Content="颜色" HorizontalAlignment="Left" Margin="18,67,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontWeight="Normal" FontSize="26"/>
+                                <Label Content="R" HorizontalAlignment="Left" Margin="19,110,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontWeight="Normal" FontSize="26"/>
+                                <Label Content="G" HorizontalAlignment="Left" Margin="19,149,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontWeight="Normal" FontSize="26"/>
+                                <Label Content="B" HorizontalAlignment="Left" Margin="19,188,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontWeight="Normal" FontSize="26"/>
+                                <Slider x:Name="b_sdr" HorizontalAlignment="Left" Margin="44,191,0,0" VerticalAlignment="Top" Width="180" Height="29" Visibility="Visible" Maximum="255" ValueChanged="b_sdr_ValueChanged"/>
+                                <Slider x:Name="g_sdr" HorizontalAlignment="Left" Margin="44,152,0,0" VerticalAlignment="Top" Width="180" Height="29" Maximum="255" ValueChanged="g_sdr_ValueChanged"/>
+                                <Slider x:Name="r_sdr" HorizontalAlignment="Left" Margin="44,113,0,0" VerticalAlignment="Top" Width="180" Height="29" Maximum="255" ValueChanged="Slider_ValueChanged"/>
+                                <Label x:Name="r_sd" Content="Label" HorizontalAlignment="Left" Margin="229,117,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="g_sd" Content="Label" HorizontalAlignment="Left" Margin="229,156,0,0" VerticalAlignment="Top"/>
+                                <Label x:Name="b_sd" Content="Label" HorizontalAlignment="Left" Margin="229,195,0,0" VerticalAlignment="Top"/>
+                                <Label Content="A" HorizontalAlignment="Left" Margin="19,227,0,0" VerticalAlignment="Top" FontFamily="Roboto" FontWeight="Normal" FontSize="26"/>
+                                <Slider x:Name="a_sdr" HorizontalAlignment="Left" Margin="44,230,0,0" VerticalAlignment="Top" Width="180" Height="29" Visibility="Visible" Maximum="255" ValueChanged="a_sdr_ValueChanged"/>
+                                <Label x:Name="a_sd" Content="Label" HorizontalAlignment="Left" Margin="229,234,0,0" VerticalAlignment="Top"/>
+                                <Label Content="图像" HorizontalAlignment="Left" Margin="290,67,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontWeight="Normal" FontSize="26"/>
+                                <TextBox x:Name="st_bg_image_textbox" HorizontalAlignment="Left" Margin="290,117,0,0" TextWrapping="Wrap" Text="png格式图片，支持透明，420x800以上大小体验更佳" VerticalAlignment="Top" Width="160" FontFamily="Source Han Sans SC"/>
+                                <Button Content="选择" Margin="455,101,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" Click="Button_Click_33"/>
+                                <Button Content="应用图像背景更改" Margin="455,139,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" Click="Button_Click_34"/>
+                                <Button Content="清除图像背景" Margin="455,177,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC"/>
+                                <Label Content="窗口特效" HorizontalAlignment="Left" Margin="612,10,0,0" VerticalAlignment="Top" FontFamily="Source Han Sans SC" FontWeight="Normal" FontSize="36"/>
+                                <Label Content="亚克力窗口模糊效果（仅" HorizontalAlignment="Left" Margin="612,62,0,0" VerticalAlignment="Top" FontSize="16"/>
+                                <Label Content="聚焦窗口 Win11无效）：" HorizontalAlignment="Left" Margin="612,81,0,0" VerticalAlignment="Top" FontSize="16"/>
+                                <ui:ToggleSwitch x:Name="toggleswitch_AC" Margin="612,109,0,0" VerticalAlignment="Top" IsOn="True"/>
+                                <Button Content="应用所有窗口特效设置" Margin="621,234,0,0" VerticalAlignment="Top" Click="Button_Click_35" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
                 </Grid>
             </TabItem>
             <TabItem Header="关于" FontFamily="Source Han Sans SC">
@@ -260,7 +303,7 @@
                     <Label Content="程序开源地址：" Margin="188,256,481,0" VerticalAlignment="Top" FontSize="18" FontFamily="Source Han Sans SC" Height="27"/>
                     <ui:HyperlinkButton NavigateUri="https://github.com/Stargazing-Studio/System-Init-Toolbox" Height="33" VerticalAlignment="Top" Content="Stargazing-Studio/System-init-Toolbox" Margin="324,253,0,0" FontFamily="Source Han Sans SC"/>
                     <Label Content="欢迎提出issues/pull requests哦！" Margin="324,286,277,0" VerticalAlignment="Top" FontSize="12" FontFamily="Source Han Sans SC" Height="27"/>
-                    <ui:HyperlinkButton NavigateUri="https://github.com/scp-10492" Height="33" VerticalAlignment="Top" Content="@SCP-10492" Margin="464,188.3,0,0" Cursor="Hand" FontSize="12" FontFamily="Source Han Sans SC"/>
+                    <ui:HyperlinkButton NavigateUri="https://github.com/scp-10492" Height="33" VerticalAlignment="Top" Content="@scp-10492" Margin="464,187,0,0" Cursor="Hand" FontSize="14" FontFamily="Source Han Sans SC"/>
                 </Grid>
             </TabItem>
             <TabItem Header="捐助" FontFamily="Source Han Sans SC">
@@ -268,7 +311,7 @@
                     <Label Content="若您觉得这款软件还不错，烦请捐助一下~" HorizontalAlignment="Center" Margin="0,67,0,0" VerticalAlignment="Top" FontSize="20"/>
                     <Label Content="捐助不是最重要的，只要大家觉得这款软件好用，就是我们前进的最大动力！" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" FontSize="10"/>
                     <Button Content="微信支付" Margin="230,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_14" FontFamily="Source Han Sans SC"/>
-                    <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15" FontFamily="Source Han Sans SC"/>
+                    <Button Content="Paypal" Margin="470,207,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click_15" FontFamily="Roboto" Height="33"/>
                 </Grid>
             </TabItem>
             <TabItem Header="开发选项" FontFamily="Source Han Sans SC" Opacity="0" IsEnabled="False">
