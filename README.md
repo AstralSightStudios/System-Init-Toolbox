@@ -19,9 +19,9 @@
 下载完成后，双击运行，按照提示安装即可，非常简单、快速。
 
 # 如何编译并运行此程序
-上面说过，此程序使用Visual Studio 2022作为编辑器。所以如果要通过编译的方式运行此程序，您先需要下载并安装一个**[Visual Studio](https://visualstudio.microsoft.com/zh-hans/)，并确保已经勾选了“.NET桌面开发”以及“Windows 11 22000.0 SDK”这两个功能选项。
+上面说过，此程序使用Visual Studio 2022作为编辑器。所以如果要通过编译的方式运行此程序，您先需要下载并安装一个 **[Visual Studio](https://visualstudio.microsoft.com/zh-hans/)**，并确保已经勾选了“.NET桌面开发”以及“Windows 11 22000.0 SDK”这两个功能选项。
 
-安装成功后，使用**[Github Desktop](https://desktop.github.com/)来clone此仓库至您的电脑。
+安装成功后，使用 **[Github Desktop](https://desktop.github.com/)** 来clone此仓库至您的电脑。
 
 当然，我们只是推荐您使用Github Desktop。如果您还是只想使用原版Git，可以通过执行以下命令来clone此仓库：
 
