@@ -12,7 +12,7 @@
 如果您想通过编译的方式运行或修改此程序，详见下方：如何编译并运行此程序
 
 # 从Github Release下载安装程序
-这是我们最推荐您使用的方法，且是最稳定最简单最保险的方法。 您只需要点一下此项目页面右边的Releases，或者直接干脆 **[点这里](https://github.com/Stargazing-Studio/System-Init-Toolbox/Releases)** 就能直达下载页面，获取程序所有版本的下载链接。
+这是我们最推荐您使用的方法，且是最稳定最简单最保险的方法。 您只需要点一下此项目页面右边的Releases，或者直接干脆 **[点这里](https://github.com/Stargazing-Studio/System-Init-Toolbox/releases)** 就能直达下载页面，获取程序所有版本的下载链接。
 
 下载速度很慢？**[这个网站](https://d.serctl.com)** 或许能帮你。
 
