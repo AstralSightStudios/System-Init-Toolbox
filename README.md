@@ -45,4 +45,4 @@ clone完毕后，双击System Init Toolbox.sln应该就可以打开此项目了�
 3.为这个项目捐助（在程序内有捐助入口）
 
 # 我遇到问题了，需要帮助！
-如果你有任何问题，也可以发在Issues里，不影响的。但是在提问之前，还请先了解： **[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)**
+如果你有任何问题，也可以发在Issues里，我们看到了也会尽力帮助你去解决。但是在提问之前，还请先了解： **[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)** 如果我们认为你的问题没有意义或你的问题重复，我们将有权利不回答或删除你的问题。
