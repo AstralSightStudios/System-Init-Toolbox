@@ -1,6 +1,6 @@
 Need English version? [click here](https://github.com/Stargazing-Studio/System-Init-Toolbox/blob/master/README_EN.md)
 
-需要中文英文版本？[点此进入](https://github.com/Stargazing-Studio/System-Init-Toolbox/blob/master/README_EN.md)
+需要英文版本？[点此进入](https://github.com/Stargazing-Studio/System-Init-Toolbox/blob/master/README_EN.md)
 
 # System-Init-Toolbox
 【System Init Toolbox · 系统初始化工具箱】一个能让你在安装系统后快速安装运行库等必备程序的软件<br/>
