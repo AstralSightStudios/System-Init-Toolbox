@@ -4,6 +4,7 @@ Need English version? [click here](https://github.com/Stargazing-Studio/System-I
 
 # System-Init-Toolbox
 【System Init Toolbox · 系统初始化工具箱】一个能让你在安装系统后快速安装运行库等必备程序的软件<br/>
+![](https://github.com/Stargazing-Studio/System-Init-Toolbox/raw/master/Github_Wiki_Files/readme_mainmenu.png)
 ## 注意：这是master分支，也叫dev分支，其内容为实时开发提交，无法保证功能可用性，仅能保证可正常编译运行。若要修改程序请在已发布版本源码的基础上修改，尽可能避免在此分支的基础上修改。<br/>
 # 下载、安装与运行
 首先，欢迎使用System Init Toolbox。
