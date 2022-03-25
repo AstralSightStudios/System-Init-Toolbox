@@ -6,6 +6,7 @@ Need Chinese version? [click here](https://github.com/Stargazing-Studio/System-I
 
 # System-Init-Toolbox
 【System Init Toolbox】A software that allows you to quickly install necessary programs such as runtime libraries after installing the system<br/>
+![](https://github.com/Stargazing-Studio/System-Init-Toolbox/raw/master/Github_Wiki_Files/readme_mainmenu.png)
 ## Note: This is the master branch, also known as the dev branch. Its content is real-time development and submission, and the availability of functions cannot be guaranteed. It can only be guaranteed to compile and run normally. If you want to modify the program, please modify it on the basis of the released version source code, and avoid modifying on the basis of this branch as much as possible. <br/>
 # Download, install and run
 First, welcome to the System Init Toolbox.
