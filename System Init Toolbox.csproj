@@ -11,7 +11,7 @@
     <NeutralLanguage>zh-CN</NeutralLanguage>
     <AnalysisLevel>none</AnalysisLevel>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
