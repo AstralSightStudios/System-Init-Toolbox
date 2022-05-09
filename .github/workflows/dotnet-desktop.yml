@@ -22,7 +22,7 @@ jobs:
     env:
       Solution_Name: System Init Toolbox.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       Wap_Project_Directory: System Init Toolbox    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: System Init Toolbox                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Path: .                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
