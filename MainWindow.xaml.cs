@@ -200,6 +200,10 @@ namespace System_Init_Toolbox
 				System.Windows.Forms.Application.DoEvents();
 			}
 			inited = true;
+			if(int.Parse(Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion").GetValue("CurrentBuild").ToString()) < 22000)
+            {
+				TabItem_WSATool.IsEnabled = false;
+            }
 		}
 
 		//输出变量gpu_installed_display_drivers
