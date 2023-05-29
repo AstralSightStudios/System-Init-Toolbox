@@ -1,3 +1,6 @@
+# 暂停开发通知
+### 可能你也注意到了，这个项目很久没有更新了，那不是因为我们希望抛弃这个项目，而是这个项目是在我刚开始学习WPF时编写的练手项目，当时我的设想是让它公开宣传作为一个大型软件去发布，但很显然做不到，我或许可以重新开始维护它，但代码实在太乱（完全不遵循规范的语法与命名、几乎没有注释、各种奇葩操作、堆叠屎山代码、在可以用循环的地方复制粘贴多份代码等等），当时我糟糕的项目管理能力和代码编写能力让这个项目成为了100%完全的烂摊子，这本是个很有趣的想法，但我没办法完成它。如果你有兴趣继续它，克隆去吧，我会很开心的
+
 Need English version? [click here](https://github.com/Stargazing-Studio/System-Init-Toolbox/blob/master/README_EN.md)
 
 需要英文版本？[点此进入](https://github.com/Stargazing-Studio/System-Init-Toolbox/blob/master/README_EN.md)
